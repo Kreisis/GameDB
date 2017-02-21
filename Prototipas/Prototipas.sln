@@ -7,20 +7,21 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Prototipas", ".", "{00BCF7D
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_53870"
-		Debug.AspNetCompiler.PhysicalPath = "G:\Prototipas\"
+		Debug.AspNetCompiler.PhysicalPath = "..\Prototipas\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53870\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_53870"
-		Release.AspNetCompiler.PhysicalPath = "G:\Prototipas\"
+		Release.AspNetCompiler.PhysicalPath = "..\Prototipas\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53870\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "53870"
+		SlnRelativePath = "..\Prototipas\"
 	EndProjectSection
 EndProject
 Global
