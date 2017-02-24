@@ -57,7 +57,9 @@ body {
     border-color:inherit; /* this will inherit the parent's inherited border-color */
 }
 
+
 .banner-img{
     width: 100%;
-    height: 100px;
+    height: 100%;
+    
 }
