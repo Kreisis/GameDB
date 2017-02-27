@@ -61,6 +61,31 @@ body {
     margin-top: 20px;
     margin-bottom: 20px; 
 }
-.search-bar-div > div{
-    border: none;
+.search-bar-div{
+    width:inherit;
+}
+
+.side-pic{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.a-pic{
+    width: 94%;
+    display: block;
+    margin: 0 auto;
+}
+
+.b-pic{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.col-md-8,
+.col-md-4,
+.col-md-3{
+    padding: 0px;
+    margin: 0px;
+    margin-top:10px;
 }
