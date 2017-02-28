@@ -65,10 +65,13 @@ body {
     width:inherit;
 }
 
-.side-pic{
+.side-pic-a{
     width: 100%;
-    display: block;
-    margin: 0 auto;
+    padding-left: 5%;
+}
+.side-pic-5{
+    width: 100%;
+    padding-right: 5%;
 }
 
 .a-pic{
