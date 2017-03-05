@@ -10,6 +10,37 @@ body {
 	color: #ffc13d;
 }
 
+.game-name-text{
+   float: left;
+   margin: 0;
+   padding: 0;
+   width: 50%;
+   height: 100%;
+   color: #FFF;
+   border: 1px solid #FFF;
+   font-size: 30px;
+   text-align:left;
+}
+.game-description{
+   float: left;
+   margin: 0;
+   padding: 0;
+   width: 50%;
+   height: 100%;
+   color: #FFF;
+   border: 1px solid #FFF;
+   font-size: 17px;
+   text-align: justify;
+}
+.text-holder{
+   position:absolute;
+   left: 0;
+   bottom: 4%;
+   width: 96%;
+   height: 30%;
+   background-color: rgba(0,0,0,0.7);
+}
+
 .text-vertical-center {
     /*display: table-cell;
     text-align: center;
@@ -27,10 +58,10 @@ body {
     font-weight: 700;
 }
 
-.row > div{
-    border:1px solid;     /* this will inherit the parent color as the border-color */
-    border-color:inherit; /* this will inherit the parent's inherited border-color */
-}
+/*/.row > div{
+    border:1px solid;     /* this will inherit the parent color as the border-color *
+    border-color:inherit; /* this will inherit the parent's inherited border-color *
+}*/
 
 .banner-div{
     width: 100%;
@@ -67,28 +98,61 @@ body {
 
 .side-pic-a{
     width: 100%;
-    padding-left: 5%;
+    object-fit: cover;
+    padding-left: 10px;
+    padding-right: 4%;
 }
 .side-pic-b{
     width: 100%;
-    padding-right: 5%;
+    object-fit: cover;
+    padding-right: 10px;
+    padding-left: 4%;
+}
+.a-pic{
+    position: relative;
+    margin-bottom: 2%;
 }
 
-.a-pic{
-    width: 94%;
-    display: block;
-    margin: 0 auto;
+.a-pic-left{
+    width: 100%;
+    object-fit: cover;
+    padding-right: 4%;
+    /*/display: block;
+    margin: 0 auto;*/
+}
+.a-pic-right{
+    width: 100%;
+    object-fit: cover;
+    padding-left: 4%;
+    /*/display: block;
+    margin: 0 auto;*/
 }
 
 .b-pic{
     width: 100%;
+    object-fit: cover;
     display: block;
-    margin: 0 auto;
+}
+.bottom-pic{
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 5%;
+}
+.bottom-pic-left{
+    padding-left: 10px;
+    padding-right: 2%;
+}
+.bottom-pic-mid{
+    padding: 0% 2%;
+}
+.bottom-pic-right{
+    padding-right: 10px;
+    padding-left: 2%;
 }
 .col-md-8,
 .col-md-4,
 .col-md-3{
     padding: 0px;
     margin: 0px;
-    margin-top:10px;
+    
 }
