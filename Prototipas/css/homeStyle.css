@@ -31,6 +31,8 @@ body {
    border: 1px solid #FFF;
    font-size: 17px;
    text-align: justify;
+   word-wrap:break-word;
+   
 }
 .text-holder{
    position:absolute;

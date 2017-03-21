@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     fixImageDimensions();
     init();
+    fixGameDescription();
 });
 
 function init() {
@@ -25,24 +26,31 @@ function fixImageDimensions() {
     $(".bottom-pic").css("height", $(".bottom-pic-mid").height());
     /*$(".game-name-text").css("line-height", $(".game-name-text").height());*/
 }
+function fixGameDescription() {
+    var description = $(".game-description").html();
+    if (description.length >= 80) {
+        description = description.slice(0, 80);
+        description = description + "...";
+        console.log(description.length);
+        $(".game-description").html(description);
+    }
+    
+}
 
 function gamer(data) {
-    console.log(data);
+    /*console.log(data);*/
     list.forEach(function (item) {
         if (item.gameId[0] === data.results.id) {
+            var height = $("#" + item.id).height();
+            
             if (item.type == "wide") {
-                var height = $("#" + item.id).height();
-                /*(document).getElementsByClassName(item.id)[0].src = data.results.image.medium_url;*/
-                $("#" + item.id).attr('src', data.results.image.screen_url);
-                $("#" + item.id).css("height", height);
+                $("#" + item.id).attr('src', data.results.image.screen_url);            
             }
             else {
-                var height = $("#" + item.id).height();
-                /*(document).getElementsByClassName(item.id)[0].src = data.results.image.medium_url;*/
                 $("#" + item.id).attr('src', data.results.image.medium_url);
-                $("#" + item.id).css("height", height);
             }
-                      
+            $("#" + item.id).css("height", height);
+
         }
     });
 }
