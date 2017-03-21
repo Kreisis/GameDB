@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
-    fixImageDimensions();
     init();
+    
     fixGameDescription();
 });
 
@@ -8,6 +8,7 @@ function init() {
     list.forEach(function (item) {
         callToServer(item.gameId[0]);
     });
+    fixImageDimensions();
 }
 
 var list = [{ "id": "side-pic-a", "gameId": [20964], "type": "tall" , "idIndex": -1},
@@ -21,10 +22,11 @@ var list = [{ "id": "side-pic-a", "gameId": [20964], "type": "tall" , "idIndex":
     { "id": "bottom-pic-3", "gameId": [4725], "type": "wide", "idIndex": -1 }];
 
 function fixImageDimensions() {
-    $(".a-pic").css("height", $(".b-pic").height());
+    /*$(".a-pic").css("height", $(".b-pic").height());
     $(".side-pic").css("height", ($(".a-pic").outerHeight(true) + $(".a-pic").height()));
-    $(".bottom-pic").css("height", $(".bottom-pic-mid").height());
+    $(".bottom-pic").css("height", $(".bottom-pic-mid").height());*/
     /*$(".game-name-text").css("line-height", $(".game-name-text").height());*/
+
 }
 function fixGameDescription() {
     var description = $(".game-description").html();
@@ -33,8 +35,7 @@ function fixGameDescription() {
         description = description + "...";
         console.log(description.length);
         $(".game-description").html(description);
-    }
-    
+    }   
 }
 
 function gamer(data) {
