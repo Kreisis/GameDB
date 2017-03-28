@@ -1,5 +1,30 @@
 ﻿$(document).ready(function () {
     init();
+
+    $(".thumbnail").on("click", function () {
+        var id = $(this).attr("data-game-id");
+        localStorage.setItem('game-id', id);
+        window.open('itemPage.html', '_self');
+    });
+
+    $("#searchButton").on("click", function () {
+        var searchText = $("#searchBar").val().trim();
+        if (searchText != "") {
+            localStorage.setItem('search-argument', searchText);
+            window.open('search.html', '_self');
+        }
+        
+    })
+
+    $('#searchBar').keypress(function (e) {
+        if (e.which == 13) {
+            var searchText = $("#searchBar").val().trim();
+            if (searchText != "") {
+                localStorage.setItem('search-argument', searchText);
+                window.open('search.html', '_self');
+            }
+        }
+    });
 });
 
 function init() {
@@ -37,6 +62,8 @@ function serverCallback(data) {
 
             $("#" + item.id).parent().find("h3").html(name);
             $("#" + item.id).parent().find("p").html(deck);
+
+            $("#" + item.id).parent().attr("data-game-id", item.gameId[item.idIndex]);
         }
     });
 }
@@ -49,5 +76,9 @@ function callToServer(gameId) {
         dataType: "jsonp"
     });
 }
+
+
+
+
 
 
