@@ -11,7 +11,8 @@ function serverCallback(data) {
     console.log(data);
     $("#title").html(data.results.name);
     $("#image").attr("src", data.results.image.medium_url);
-    $("#description").html(data.results.description);
+    var tmp = data.results.description.replace(/<img .*?>/g, "");
+    $("#description").html(tmp);
 }
 
 function callToServer(gameId) {
