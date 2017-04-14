@@ -84,6 +84,12 @@ body {
     height: 350px;
     object-fit: cover;
 }
+#side-pic-a, #side-pic-b{
+    height: 800px;
+}
+/*/.caption{
+    border: 1px solid green;
+}*/
 .thumbnail{
     background-color: rgba(0,0,0,0.3);
     border-radius: 0px;
@@ -113,6 +119,32 @@ input[type="color"]:focus,
   border-color: rgba(255, 193, 61, 0.8);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 193, 61, 0.6);
   outline: 0 none;
+}
+
+
+.loadingStuff > h1{
+    margin: 3%;
+    
+    text-align:center;
+    color: #FFF;
+}
+.loader {
+    margin: auto;
+    border: 32px solid #f3f3f3; /* Light grey */
+    border-top: 32px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#rows{
+    visibility: hidden;
 }
 
 

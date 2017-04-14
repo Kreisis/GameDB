@@ -1,10 +1,12 @@
 ﻿$(document).ready(function () {
     init();
+    
 
     $(".thumbnail").on("click", function () {
         var id = $(this).attr("data-game-id");
         localStorage.setItem('game-id', id);
         window.open('itemPage.html', '_self');
+        
     });
 
     $("#searchButton").on("click", function () {
@@ -25,6 +27,7 @@
             }
         }
     });
+    
 });
 
 function init() {
@@ -32,6 +35,11 @@ function init() {
         var index = Math.floor(Math.random() * item.gameId.length);
         item.idIndex = index;
         callToServer(item.gameId[index]);
+    });
+    $(window).on("load", function () {
+        fixHeight();
+        $(".loadingStuff").css("display", "none");
+        $("#rows").css("visibility", "initial");
     });
 }
 
@@ -45,16 +53,43 @@ var list = [{ "id": "side-pic-a", "gameId": [20964, 41484, 29443, 34975, 49833, 
     { "id": "bottom-pic-2", "gameId": [4725, 38596, 36884, 42905, 49379, 44653, 42915], "type": "wide", "idIndex": -1 },
     { "id": "bottom-pic-3", "gameId": [4725, 16889, 7659, 42034, 6673, 11552], "type": "wide", "idIndex": -1 }];
 
+function fixHeight() {
+    var heightA, heightB, heightC;
+    var sideHeight = 0;
+    heightA = $("#pic-a-1").parent().outerHeight();
+    heightB = $("#pic-b-1").parent().outerHeight();
+    $("#pic-a-1").parent().css('height', Math.max(heightA, heightB));
+    $("#pic-b-1").parent().css('height', Math.max(heightA, heightB));
+    sideHeight += $("#pic-b-1").parent().outerHeight(true);
+    $("#pic-a-1").css('height', $("#pic-a-1").parent().height() - $("#pic-a-1").parent().find(".caption").outerHeight());
+    $("#pic-b-1").css('height', $("#pic-b-1").parent().height() - $("#pic-b-1").parent().find(".caption").outerHeight());
+
+
+    heightA = $("#pic-a-2").parent().outerHeight();
+    heightB = $("#pic-b-2").parent().outerHeight();
+    $("#pic-a-2").parent().css('height', Math.max(heightA, heightB));
+    $("#pic-b-2").parent().css('height', Math.max(heightA, heightB));
+    sideHeight += Math.max(heightA, heightB);
+    $("#pic-a-2").css('height', $("#pic-a-2").parent().height() - $("#pic-a-2").parent().find(".caption").outerHeight());
+    $("#pic-b-2").css('height', $("#pic-b-2").parent().height() - $("#pic-b-2").parent().find(".caption").outerHeight());
+
+    $("#side-pic-a").parent().css('height', sideHeight);
+    $("#side-pic-b").parent().css('height', sideHeight);
+    $("#side-pic-a").css('height', $("#side-pic-a").parent().height() - $("#side-pic-a").parent().find(".caption").outerHeight());
+    $("#side-pic-b").css('height', $("#side-pic-b").parent().height() - $("#side-pic-b").parent().find(".caption").outerHeight());
+
+    heightA = $("#bottom-pic-1").parent().outerHeight();
+    heightB = $("#bottom-pic-2").parent().outerHeight();
+    heightC = $("#bottom-pic-3").parent().outerHeight();
+    $("#bottom-pic-1").parent().css('height', Math.max(heightA, heightB, heightC));
+    $("#bottom-pic-2").parent().css('height', Math.max(heightA, heightB, heightC));
+    $("#bottom-pic-3").parent().css('height', Math.max(heightA, heightB, heightC));
+
+}
+
 function serverCallback(data) {
-    /*console.log(data);*/
     list.forEach(function (item) {
-        if (item.gameId[item.idIndex] === data.results.id) {/*
-            if (item.type == "wide") {
-                $("#" + item.id).attr('src', data.results.image.screen_url);            
-            }
-            else {
-                $("#" + item.id).attr('src', data.results.image.medium_url);
-            }   */
+        if (item.gameId[item.idIndex] === data.results.id) {
             $("#" + item.id).attr('src', data.results.image.medium_url);
 
             var name = data.results.name;

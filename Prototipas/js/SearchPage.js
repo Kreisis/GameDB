@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
     init();
+    if ("2007-08-28 00:00:00" > "2003-12-31 00:00:00") {
+        console.log("Paeina");
+    }
 
     $("#searchButton").on("click", function () {
         var searchText = $("#searchBar").val().trim();
@@ -36,9 +39,20 @@ function test(e) {
     window.open('itemPage.html', '_self');
 };
 
+function compare(a, b) {
+    if (a.original_release_date > b.original_release_date) {
+        return -1;
+    }
+    if (a.original_release_date < b.original_release_date) {
+        return 1;
+    }
+    return 0;
+}
+
 function serverCallback(data) {
     console.log(data);
     var searchResultsHolder = document.getElementById("searchResultsHolder");
+    data.results.sort(compare);
     data.results.forEach(function (item) {
 
         var a = document.createElement("a");
@@ -54,7 +68,16 @@ function serverCallback(data) {
         aDivMediaFigure.className = "pull-left";
         var aDivMediaFigureImg = document.createElement("img");
         aDivMediaFigureImg.className = "media-object img-rounded img-responsive";
-        aDivMediaFigureImg.src =  item.image.thumb_url;
+
+        if (item.image != null) {
+            aDivMediaFigureImg.src = item.image.small_url;
+        }
+        else {
+            console.log(item.id);
+            aDivMediaFigureImg.src = "http://liutenas.lt/images/portfolio/no-image-found.jpg";
+        }
+        
+        
 
         aDivMediaFigure.appendChild(aDivMediaFigureImg);
         aDivMedia.appendChild(aDivMediaFigure);
@@ -62,8 +85,8 @@ function serverCallback(data) {
 
         var aDivContent = document.createElement("div");
         aDivContent.className = "col-md-9";
-        var aDivContentHeading = document.createElement("h4");
-        aDivContentHeading.className = "list-group-item-heading";
+        var aDivContentHeading = document.createElement("h1");
+        aDivContentHeading.className = "content-header";
         aDivContentHeading.innerHTML = item.name;
         var aDivContentDescription = document.createElement("p");
         aDivContentDescription.className = "list-group-item-text";
@@ -73,7 +96,12 @@ function serverCallback(data) {
         aDivContent.appendChild(aDivContentDescription);
         a.appendChild(aDivContent);
         searchResultsHolder.appendChild(a);
+        console.log(1);
     });
+    $(window).on("load", function () {
+        $(".media-object").css('height', $(".list-group-item").innerHeight() - ($(".list-group-item").outerHeight() - $(".list-group-item").height()));
+    });
+    
     /*
     <a href="#" class="list-group-item active">
             <div class="media col-md-3">

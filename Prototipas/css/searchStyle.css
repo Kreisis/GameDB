@@ -161,9 +161,24 @@ body {
 a.list-group-item {
     height:auto;
     min-height:220px;
+    background-color: rgba(41, 43, 45, 1);
+    color: #FFF;
+    border-radius: 0;
+    margin-bottom: 2%;
 }
-a.list-group-item.active small {
-    color:#fff;
+.content-header{
+    font-weight:500;
+}
+.media{
+    height: 100%;
+}
+.pull-left{
+    margin: auto;
+}
+.media-object{ 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0;
 }
 
 
