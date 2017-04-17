@@ -181,4 +181,28 @@ a.list-group-item {
     border-radius: 0;
 }
 
+.loadingStuff,
+.search-rows{
+    visibility: hidden;
+}
 
+.loadingStuff > h1{
+    margin: 3%;
+    
+    text-align:center;
+    color: #FFF;
+}
+.loader {
+    margin: auto;
+    border: 32px solid #f3f3f3; /* Light grey */
+    border-top: 32px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

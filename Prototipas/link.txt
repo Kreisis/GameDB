@@ -1,1 +1,2 @@
 http://www.giantbomb.com/api/game/3030-4725/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=json
+https://www.giantbomb.com/api/search/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=json&query=uncharted&resources=game

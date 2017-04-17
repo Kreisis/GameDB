@@ -10,13 +10,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/itemPage.css" rel="stylesheet">
+    <link href="css/logInStyle.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/ItemPage.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -40,61 +39,21 @@
             <button type="button" class="btn btn-dark" onclick="parent.location='logIn.html'">LOG IN</button>
         </div>
     </div>
-    
-    <div class="main-part">
-        <div class="left-sidebar">
 
-        </div>
-        <div class="content-holder">
-            <h3 id="title"></h3>
-            <div class="row">
-                <div class="col-md-5">
-                    <img id="image" />
-                </div>
-                <div class="col-md-7">
-                    <p id="deck">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>Login to Your Account</h1><br>
+            <form>
+                <input type="text" name="user" placeholder="Username">
+                <input type="password" name="pass" placeholder="Password">
+                <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+            </form>
 
-                    </p>
-                </div>
-            </div>
-            <p id="description"></p>
-        </div>
-        <div class="right-sidebar">
-
+            <!--<div class="login-help">
+                <a href="#">Register</a> - <a href="#">Forgot Password</a>
+            </div>-->
         </div>
     </div>
-    <!--
-    <div class="row">
-        <div class="col-md-2">
-            <div class="left-sidebar">
-                <h1>
-                    SWx
-                </h1>
-            </div>
-
-        </div>
-        <div class="col-md-8">
-            <div class="content-holder">
-                <h3 id="title"></h3>
-                <div class="row">
-                    <div class="col-md-5">
-                        <img id="image" />
-                    </div>
-                    <div class="col-md-7">
-                        <p id="deck">
-
-                        </p>
-                    </div>
-                </div>
-                <p id="description"></p>
-            </div>
-        </div>
-        <div class="col-md-2">
-
-        </div>
-    </div>-->
-
-    
 
 </body>
 
