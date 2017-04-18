@@ -38,20 +38,29 @@ function serverCallback(data) {
     console.log(data);
     $("#title").html(data.results.name);
     $("#image").attr("src", data.results.image.medium_url);
-    $("#deck").html(data.results.deck);
+    $("#actual-deck").html(data.results.deck);
+
+    if (data.results.original_release_date != null) {
+        $("#release-date").append(data.results.original_release_date);
+    }
+    else {
+        $("#release-date").append("Not Found");
+    }
+    
+
     var tmp = data.results.description.replace(/<figure .*?>/g, "");
     tmp = tmp.replace(/<a .*?>/g, "");
     tmp = tmp.replace(/<img .*?>/g, "");
     tmp = tmp.replace(/<figcaption .*?>/g, "");
     $("#description").html(tmp);
     $(window).on('load', function () {
-        $("#deck").css("height", $("#image").height());
+        $("#deck").css("height", 0);
     });
 }
 
 function callToServer(gameId) {
     $.ajax({
-        url: "http://www.giantbomb.com/api/game/3030-" + gameId + "/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=jsonp&field_list=image,id,deck,name,description",
+        url: "http://www.giantbomb.com/api/game/3030-" + gameId + "/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=jsonp&field_list=image,id,deck,name,description,developers,platforms,publishers,similar_games,original_release_date",
         type: "get",
         data: { json_callback: "serverCallback" },
         dataType: "jsonp"
