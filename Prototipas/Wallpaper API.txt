@@ -1,0 +1,5 @@
+API_KEY: 5c008711ad4f2de33a360d34984a51b4
+
+Category: https://wall.alphacoders.com/api2.0/get.php?auth=5c008711ad4f2de33a360d34984a51b4&method=category&id=32
+
+Search: https://wall.alphacoders.com/api2.0/get.php?auth=5c008711ad4f2de33a360d34984a51b4&method=search&term=witcher

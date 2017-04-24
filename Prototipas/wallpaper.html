@@ -10,15 +10,18 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/itemPage.css" rel="stylesheet">
+    <link href="css/wallpaperPage.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css" />
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="js/ItemPage.js" type="text/javascript"></script>
 
-</head>
+    <script src="js/jquery.ajax-cross-origin.min.js" type="text/javascript"></script>
+    <script src="js/wallpaperPage.js" type="text/javascript"></script>
+
+    </head>
 <body>
     <div class="banner-div">
         <img class="banner-img" src="img/banner-new.jpg" />
@@ -40,32 +43,30 @@
             <button type="button" class="btn btn-dark" onclick="parent.location='wallpaper.html'">WALLPAPERS</button>
         </div>
     </div>
-    
-    <div class="main-part">
-        <div class="left-sidebar">
 
-        </div>
-        <div class="content-holder">
-            <h3 id="title"></h3>
-            <div class="row">
-                <div class="col-md-5">
-                    <img id="image" />
-                </div>
-                <div class="col-md-7">            
-                    
-                    <p id="deck">
-                        
-                </p>
+    <div class="row search-bar-div">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." id="searchBar">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="searchButton">Go!</button>
+                </span>
             </div>
-                
         </div>
-        <p id="description"></p>
-            
     </div>
-        <div class="right-sidebar">
 
+    <div class="loadingStuff">
+        <h1>Loading...</h1>
+        <div class="loader"></div>
+    </div>
+
+    <div class="container search-rows">
+        <div class="row content-row">
+            <div class="list-group" id="searchResultsHolder">
+
+            </div>
         </div>
-        </div>
+    </div>
 </body>
 
 </html>

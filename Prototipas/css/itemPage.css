@@ -75,11 +75,15 @@ body {
     padding:0;
     width: 100%;
 }
-.deck{
+#deck{
+    height: 100%;
     position: center;
-    font-size: 16px;
+    font-size: 20px;
     vertical-align:middle;
     text-align: justify;
+}
+#deck > *{
+    height: 100%;
 }
 h2{
     text-align: center;
@@ -95,7 +99,7 @@ h2{
     margin-right: 85%;
     background: url(../img/poster1.jpg) fixed no-repeat;
     background-size: contain;
-    /*/background-position-x: -15%;*/
+    background-position-x: -9.5%;
 }
 .right-sidebar{
     display: block;

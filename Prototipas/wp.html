@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>PlayDB - your guide in the world of video games</title>
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/wallpaperPage.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css" />
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    </head>
+<body>
+    <div class="banner-div">
+        <img class="banner-img" src="img/banner-new.jpg" />
+    </div>
+    <div class="btn-group btn-group-justified nav-bar-top" role="group">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="parent.location = 'home.html'">HOME</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="parent.location='search.html'">DISCOVER</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="parent.location='History.html'">HISTORY</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="parent.location='about.html'">ABOUT</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="parent.location='logIn.html'">LOG IN</button>
+        </div>
+    </div>
+
+    <div class="row search-bar-div">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." id="searchBar">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="searchButton">Go!</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="loadingStuff">
+        <h1>Loading...</h1>
+        <div class="loader"></div>
+    </div>
+
+    <div class="container search-rows">
+        <div class="row content-row">
+            <div class="list-group" id="searchResultsHolder">
+                <div class="row content-row">
+                <div class="col-md-3">
+                    <a href="https://images2.alphacoders.com/826/826291.jpg" target="_blank" class="list-group-item">
+                    <div class="media">
+                        <figure class="pull-left">
+                            <p style="position: absolute; bottom: 0;">Test</p>
+                            <img class="media-object img-rounded img-responsive" src="https://images2.alphacoders.com/826/thumb-826291.jpg">
+                        </figure>
+                        </div>
+                    </a>
+                    </div>
+
+                <div class="col-md-3"><a href="https://images.alphacoders.com/826/826290.png" target="_blank" class="list-group-item"><div class="media"><figure class="pull-left"><img class="media-object img-rounded img-responsive" src="https://images.alphacoders.com/826/thumb-826290.png"></figure></div></a></div><div class="col-md-3"><a href="https://images3.alphacoders.com/826/826246.jpg" target="_blank" class="list-group-item"><div class="media"><figure class="pull-left"><img class="media-object img-rounded img-responsive" src="https://images3.alphacoders.com/826/thumb-826246.jpg"></figure></div></a></div><div class="col-md-3"><a href="https://images7.alphacoders.com/826/826179.jpg" target="_blank" class="list-group-item"><div class="media"><figure class="pull-left"><img class="media-object img-rounded img-responsive" src="https://images7.alphacoders.com/826/thumb-826179.jpg"></figure></div></a></div></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
