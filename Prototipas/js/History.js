@@ -2,13 +2,41 @@
     init();
 });
 
+
+var gameDetailsArray = [];
+var promiseArray = [];
+
 function init() {
     var array = JSON.parse(localStorage.getItem('HistoryArray'));
-    console.log(array);
+    
     array.forEach(function (item) {
         callToServer(item);
     });
 
+    /*$.when.apply($, promiseArray).then(test, function (e) {
+        console.log(e);
+        console.log(gameDetailsArray);
+    });*/
+
+    $.when(promiseArray[0], promiseArray[1], promiseArray[2]).then(test2);
+
+
+}
+function test2(array) {
+    console.log("SUCCESS");
+    var finalGameDetailsArray = SortBygameId(array).reverse();
+    
+    finalGameDetailsArray.forEach(function (item) {
+        appendHTML(item);
+    });
+    
+}
+
+function SortBygameId(idArray) {
+    return _.sortBy(gameDetailsArray, function (x) {
+        return _.indexOf(idArray, x.id);
+    })
+    
 }
 
 function test(e) {
@@ -16,8 +44,7 @@ function test(e) {
     window.open('itemPage.html', '_self');
 };
 
-function serverCallback(data) {
-
+function appendHTML(data) {
     var a = document.createElement("a");
     var gameID = data.id;
     a.onclick = function (gameId) {
@@ -32,8 +59,8 @@ function serverCallback(data) {
     var aDivMediaFigureImg = document.createElement("img");
     aDivMediaFigureImg.className = "media-object img-rounded img-responsive";
 
-    if (data.results.image != null) {
-        aDivMediaFigureImg.src = data.results.image.small_url;
+    if (data.image != null) {
+        aDivMediaFigureImg.src = data.image.small_url;
     }
     else {
         aDivMediaFigureImg.src = "http://liutenas.lt/images/portfolio/no-image-found.jpg";
@@ -49,10 +76,10 @@ function serverCallback(data) {
     aDivContent.className = "col-md-9";
     var aDivContentHeading = document.createElement("h1");
     aDivContentHeading.className = "content-header";
-    aDivContentHeading.innerHTML = data.results.name;
+    aDivContentHeading.innerHTML = data.name;
     var aDivContentDescription = document.createElement("p");
     aDivContentDescription.className = "list-group-item-text";
-    aDivContentDescription.innerHTML = data.results.deck;
+    aDivContentDescription.innerHTML = data.deck;
 
     aDivContent.appendChild(aDivContentHeading);
     aDivContent.appendChild(aDivContentDescription);
@@ -65,6 +92,10 @@ function serverCallback(data) {
         $(".search-rows").css("visibility", "initial");
         $(".list-group-item").css('border-radius', 0);
     });
+}
+
+function serverCallback(data) {
+    gameDetailsArray.push(data.results);
     
     /*
     <a href="#" class="list-group-item active">
@@ -85,12 +116,22 @@ function serverCallback(data) {
 }
 
 function callToServer(gameId) {
-    $.ajax({
+    var dfd = jQuery.Deferred();
+    promiseArray.push(dfd.promise());
+    var promise = $.ajax({
         url: "http://www.giantbomb.com/api/game/3030-" + gameId + "/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=jsonp&field_list=image,id,deck,name",
         type: "get",
         data: { json_callback: "serverCallback" },
         dataType: "jsonp"
+    }).fail(function (data) {
+        dfd.resolve();
     });
+    /*
+    var promise = $.get("http://cors-anywhere.herokuapp.com/" + "https://www.giantbomb.com/api/game/3030-" + gameId + "/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=json&field_list=image,id,deck,name", function (data) {
+        serverCallback(data);
+    });*/
+
+    
 }
 
 
