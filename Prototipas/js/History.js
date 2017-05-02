@@ -5,9 +5,9 @@
 
 var gameDetailsArray = [];
 var promiseArray = [];
-
+var array = [];
 function init() {
-    var array = JSON.parse(localStorage.getItem('HistoryArray'));
+    array = JSON.parse(localStorage.getItem('HistoryArray'));
     
     array.forEach(function (item) {
         callToServer(item);
@@ -18,13 +18,18 @@ function init() {
         console.log(gameDetailsArray);
     });*/
 
-    $.when(promiseArray[0], promiseArray[1], promiseArray[2]).then(test2);
+    /*$.when(promiseArray[0], promiseArray[1], promiseArray[2]).then(test2);*/
+    $.when.apply($, promiseArray).then(test2);
 
 
 }
-function test2(array) {
-    console.log("SUCCESS");
-    var finalGameDetailsArray = SortBygameId(array).reverse();
+function test2() {
+    console.log(array);
+    /*var finalGameDetailsArray = SortBygameId(array).reverse();
+    console.log(gameDetailsArray);
+    console.log(finalGameDetailsArray);*/
+
+
     
     finalGameDetailsArray.forEach(function (item) {
         appendHTML(item);
@@ -95,6 +100,7 @@ function appendHTML(data) {
 }
 
 function serverCallback(data) {
+
     gameDetailsArray.push(data.results);
     
     /*

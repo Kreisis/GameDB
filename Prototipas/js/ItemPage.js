@@ -22,9 +22,7 @@ $(document).ready(function () {
             $(".right-sidebar").css('top', newTop + 'px');
         }
     }).scroll();
-    $(window).on('load', function () {
-        
-    });
+    
 });
 
 
@@ -96,8 +94,14 @@ function serverCallback(data) {
         $("#image").css("height", Math.max($("#deck").height(), $("#image").height()));
         $("#deck").css("padding-top", ($("#deck").height() - textHeight) / 2);
         $("#deck").css("padding-bottom", ($("#deck").height() - textHeight) / 2);
+        
     });
+    $(window).load(function () {
+        $(".loadingStuff").css('display', 'none');
+    });
+    
 }
+
 
 function callToServer(gameId) {
     $.ajax({

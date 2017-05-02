@@ -33,7 +33,6 @@ function init() {
         $("#searchBar").val(keyword);
         callToServer(keyword);
     }*/
-    
     firstCall();
 }
 function firstCall(){
@@ -91,7 +90,6 @@ function serverCallback(data) {
         }
         searchResultsHolder.appendChild(rowDiv);
     }
-    
     
     /*
     <a href="#" class="list-group-item active">
