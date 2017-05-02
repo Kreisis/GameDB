@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -41,30 +42,119 @@
         </div>
     </div>
     <div class="main">
-        <h1>Vilniaus Mykolo Biržiškos gimnazijos <br /> IIb klasės mokinio<br /> Karolio Medekšos <br /> informacinių technologijų kūrybinis darbas</h1>
-        <h2>Darbo tema</h2>
-        <p>Visi esame puikiai pažįstami su internetine filmų bei serialų duomenų baze IMDB. Kita populiari medijos rūšis, kompiuteriniai žaidimai, neturi vienos populiariausios tokio tipo svetainės <br />
-        Šis projektas, PlayDB, savotiškas bandymas sukurti į IMDB panašią svetainę, skirtą ne filmams, o kompiuteriniams žaidimams</p>
-        <h2>Darbo tikslas</h2>
-        <p>Sukurti į IMDB panašią svetainę, kurioje vartotojui būtų pasiūlomi kompiuteriniai žaidimai, būtų galima jų paieška ir bendros informacijos apie juos radimas</p>
-        <h2>Darbo priemonės</h2>
-        <p>Svetainės dizainui kurti prie HTML buvo naudojamas ir CSS. Siekiant paspartinti projekto kūrimą buvo naudojamas BootStrap CSS framework'as, suteikiantis lengvą priėjimą prie kompleksiškų
-        HTML struktūrų, kurios gali būti individualiai formuojamos atskirame .css dokumente. Visa informacija apie kompiuterinius žaidimus skaitoma iš nemokamo, informacijai apie žaidimus gauti skirto
-        GiantBomb API. Ekrano užsklandų paieškai naudojamas ir Wallpaper Abyss API. Informacijos gavimą iš API, manipuliaciją HTML elementais bei responsyvų puslapio dizainą kontroliuoja keli JavaScript kalbos dokumentai, kuriuose naudojama ir jQuery JavaScript atmaina.</p>
-        <h2>Home</h2>
-        <p>Pagrindinis svetainės puslapis, kuriame vartotojui pasiūlomi keli pasaulyje populiarūs kompiuteriniai žaidimai. Yra ir paieškos laukas, skirtas žaidimų paieškai. Kiekvieną kartą atsidarius puslapį bus matoma vis kitokia siūlomų žaidimų
-        kombinacija.</p>
-        <h2>Discover</h2>
-        <p>Galimybė vykdyti kiekvieno žaidimo paišką. Yra pateikiama iki 20 rezultatų, tenkinančių paieškos užklausą ir išrikiuotų pagal žaidimo išleidimo datą.</p>
-        <h2>History</h2>
-        <p>vartotojo aplankytų žaidmų istorija.</p>
-        <h2>About</h2>
-        <p>Informacija apie projektą.</p>
-        <h2>Wallpapers</h2>
-        <p>Vartotojui suteikiama galimybė vykdyti ekrano paveikslėlių paiešką. paieška vykdoma Wallpaper Abyss API pagalba. Atsidarius puslapį pateikiami
-        naujausi į API įkelti ekrano paveikslėliai, kurių pasipildo kiekvieną dieną. Kiekvienos užklausos metu vartotojui pateikiami iki 28 ekrano paveikslėlių.</p>
-        <h2>Žaidimo aprašo puslapis</h2>
-        <p>Automatiškai generuojamas atsidarius kiekvieną žaidimą. Pateikiama žaidimo nuotrauka, pavadinimas, bei visas aprašymas, kurį galima gauti iš GiantBomb API.</p>
+        <div class="container">
+            <h1>Vilniaus Mykolo Biržiškos gimnazijos <br /> IIb klasės mokinio<br /> Karolio Medekšos <br /> informacinių technologijų kūrybinis darbas</h1>
+            
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading" >
+                        <h4 class="panel-title" >
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Darbo tema</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Visi esame puikiai pažįstami su internetine filmų bei serialų duomenų baze IMDB. Kita populiari medijos rūšis, kompiuteriniai žaidimai, neturi vienos populiariausios tokio tipo svetainės. <br />
+                            Šis projektas, PlayDB, savotiškas bandymas sukurti į IMDB panašią svetainę, skirtą ne filmams, o kompiuteriniams žaidimams
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Darbo tikslas</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Sukurti į IMDB panašią svetainę, kurioje vartotojui būtų pasiūlomi kompiuteriniai žaidimai, būtų galima jų paieška ir bendros informacijos apie juos radimas.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Darbo priemonės</a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Svetainės dizainui kurti prie HTML buvo naudojamas ir CSS. Siekiant paspartinti projekto kūrimą buvo naudojamas BootStrap CSS framework'as, suteikiantis lengvą priėjimą prie kompleksiškų
+                            HTML struktūrų, kurios gali būti individualiai formuojamos atskirame .css dokumente. Visa informacija apie kompiuterinius žaidimus skaitoma iš nemokamo, informacijai apie žaidimus gauti skirto
+                            GiantBomb API. Ekrano užsklandų paieškai naudojamas ir Wallpaper Abyss API. Informacijos gavimą iš API, manipuliaciją HTML elementais bei responsyvų puslapio dizainą kontroliuoja keli JavaScript kalbos dokumentai, kuriuose naudojama ir jQuery JavaScript atmaina.                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Home</a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Pagrindinis svetainės puslapis, kuriame vartotojui pasiūlomi keli pasaulyje populiarūs kompiuteriniai žaidimai. Yra ir paieškos laukas, skirtas žaidimų paieškai. Kiekvieną kartą atsidarius puslapį bus matoma vis kitokia siūlomų žaidimų
+                            kombinacija.                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Discover</a>
+                        </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Galimybė vykdyti kiekvieno žaidimo paišką. Yra pateikiama iki 20 rezultatų, tenkinančių paieškos užklausą ir išrikiuotų pagal žaidimo išleidimo datą.                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">History</a>
+                        </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            vartotojo aplankytų žaidmų istorija.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">About</a>
+                        </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Informacija apie projektą.                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">Wallpapers</a>
+                        </h4>
+                    </div>
+                    <div id="collapse8" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Vartotojui suteikiama galimybė vykdyti ekrano paveikslėlių paiešką. paieška vykdoma Wallpaper Abyss API pagalba. Atsidarius puslapį pateikiami
+                            naujausi į API įkelti ekrano paveikslėliai, kurių pasipildo kiekvieną dieną. Kiekvienos užklausos metu vartotojui pateikiami iki 28 ekrano paveikslėlių.                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">Žaidimo aprašo puslapis</a>
+                        </h4>
+                    </div>
+                    <div id="collapse9" class="panel-collapse collapse">
+                        <div class="panel-body about-text">
+                            Automatiškai generuojamas atsidarius kiekvieną žaidimą. Pateikiama žaidimo nuotrauka, pavadinimas, bei visas aprašymas, kurį galima gauti iš GiantBomb API.                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

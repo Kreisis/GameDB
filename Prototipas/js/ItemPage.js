@@ -35,8 +35,14 @@ function init() {
     }
     else {
         var ar = JSON.parse(localStorage.getItem("HistoryArray"));
+        ar.forEach(function (item) {
+            if (item == id) {
+                ar.splice(ar.indexOf(item), 1);
+                console.log("SW");
+            }
+        });
         ar.unshift(id);
-        if (ar.length > 20) {
+        if (ar.length > 7) {
             ar.pop();
         }
         localStorage.setItem('HistoryArray', JSON.stringify(ar));
@@ -94,10 +100,11 @@ function serverCallback(data) {
         $("#image").css("height", Math.max($("#deck").height(), $("#image").height()));
         $("#deck").css("padding-top", ($("#deck").height() - textHeight) / 2);
         $("#deck").css("padding-bottom", ($("#deck").height() - textHeight) / 2);
-        
+        $(".loadingStuff").css('display', 'none');
+        $(".content-holder").css('visibility', 'initial');
     });
     $(window).load(function () {
-        $(".loadingStuff").css('display', 'none');
+        
     });
     
 }

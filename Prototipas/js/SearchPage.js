@@ -19,6 +19,9 @@
             }
         }
     });
+    $(".list-group-item").hover(function () {
+        this
+    });
 });
 
 function init() {

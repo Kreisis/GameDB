@@ -24,23 +24,26 @@ function init() {
 
 }
 function test2() {
-    console.log(array);
-    /*var finalGameDetailsArray = SortBygameId(array).reverse();
-    console.log(gameDetailsArray);
-    console.log(finalGameDetailsArray);*/
+    var finalGameDetailsArray = SortBygameId();
 
-
-    
     finalGameDetailsArray.forEach(function (item) {
         appendHTML(item);
     });
     
 }
 
-function SortBygameId(idArray) {
-    return _.sortBy(gameDetailsArray, function (x) {
-        return _.indexOf(idArray, x.id);
-    })
+function SortBygameId() {
+    var result = [];
+    
+    array.forEach(function (id) {
+        gameDetailsArray.find(function (item) {
+            if (item.id == id) {
+                result.push(item);
+                return true;
+            }
+        });
+    });
+    return result;
     
 }
 
