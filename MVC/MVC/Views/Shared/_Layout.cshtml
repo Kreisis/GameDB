@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - PlayDB</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/topLayout.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="banner-div">
+        <img class="banner-img" src="~/img/banner-new.jpg" />
+    </div>
+    <div class="btn-group btn-group-justified nav-bar-top" role="group">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Discover", "Home")';">DISCOVER</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("History", "Home")';">HISTORY</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("About", "Home")';">ABOUT</button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Wallpapers", "Home")';">WALLPAPERS</button>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <div class="container body-content">
+        
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

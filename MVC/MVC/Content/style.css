@@ -1,0 +1,60 @@
+html
+,body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-size: cover;
+}
+
+body {
+	font-family: 'Orbitron', sans-serif;
+	color: #ffc13d;
+}
+
+.text-vertical-center {
+    /*display: table-cell;
+    text-align: center;
+    vertical-align: bottom;*/
+    text-align: center;
+    position: fixed;
+    bottom: 5%;
+    width: 100%
+}
+
+.text-vertical-center h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 4.5em;
+    font-weight: 700;
+}
+
+.btn-dark {
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0.4);
+    /*margin-bottom: 5%;*/
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active{
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.header {
+    display: table; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../img/game_bg.jpg)no-repeat center center;
+    background-size: cover;
+}
+#wrapper{
+    display: none;
+}
+
+.row {
+    border:1px solid;     /* this will inherit the parent color as the border-color */
+    border-color:inherit; /* this will inherit the parent's inherited border-color */
+}
