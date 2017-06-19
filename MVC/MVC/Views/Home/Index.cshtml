@@ -1,6 +1,4 @@
-﻿@using MVC.Models;
-@using System.Threading.Tasks;
-
+﻿
 @{
     ViewBag.Title = "Home Page";
 }
@@ -10,8 +8,7 @@
     @Scripts.Render("~/js/ThumbnailHomeController.js");
 }
 @{ 
-    var results = DataSearch.GetData("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name", "4725");
-    Console.Write(results);
+    
 }
 
 <div class="row search-bar-div">

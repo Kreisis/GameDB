@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC.Models;
 
 namespace MVC.Controllers
 {
@@ -10,7 +11,9 @@ namespace MVC.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var results = DataSearch.GetData("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name", "4725");
+            Console.Write(results);
+            return View(results);
         }
 
         public ActionResult About()
