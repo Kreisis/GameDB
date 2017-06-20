@@ -1,9 +1,10 @@
 ﻿@using MVC.Models;
+@model IndexModel
 @{
     ViewBag.Title = "Home Page";
     @Styles.Render("~/Content/homeStyle_with_thumb.css");
     @*@Scripts.Render("~/js/ThumbnailHomeController.js");*@
-    RootObject[] rootArray = (RootObject[])ViewData["ThumbnailDataArray"];
+RootObject[] rootArray = Model.rootObj;
 }
 
 <div class="row search-bar-div">
