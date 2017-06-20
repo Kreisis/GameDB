@@ -11,9 +11,11 @@ namespace MVC.Controllers
     {
         public ActionResult Index()
         {
-            var results = DataSearch.GetData("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name", "4725");
-            Console.Write(results);
-            return View(results);
+            RootObject[] rootObj = DataSearchForThumbnail.GetCompleteDataForThumbnails("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name");
+
+            ViewData["ThumbnailDataArray"] = rootObj;
+            
+            return View();
         }
 
         public ActionResult About()

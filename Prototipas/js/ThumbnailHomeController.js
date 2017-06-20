@@ -43,7 +43,10 @@ function init() {
     });
 }
 
-var list = [{ "id": "side-pic-a", "gameId": [20964, 41484, 29443, 34975, 49833, 44507, 47342], "type": "tall", "idIndex": -1 },
+var list = [{
+    "id": "side-pic-a", "gameId": [
+        20964, 41484, 29443, 34975, 49833, 44507, 47342], "type": "tall", "idIndex": -1
+},
     { "id": "side-pic-b", "gameId": [39035, 42912, 48113, 36989, 32317, 20654, 42712], "type": "tall", "idIndex": -1 },
     { "id": "pic-a-1", "gameId": [39750, 42581, 38270, 37957, 36765, 42918], "type": "wide", "idIndex": -1 },
     { "id": "pic-a-2", "gameId": [21144, 32686, 35129, 37580, 38538, 40796], "type": "wide", "idIndex": -1 },

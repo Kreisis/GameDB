@@ -109,7 +109,7 @@ input[type="color"]:focus,
 }
 
 #rows{
-    visibility: hidden;
+    visibility: visible;
 }
 
 
