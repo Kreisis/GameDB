@@ -20,15 +20,18 @@ namespace MVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            return View();
+        }
 
+        public ActionResult ItemPage(int ID)
+        {
+            RootObject rootObj = DataSearchForDescription.GetDescription("739777161fa7c039190e538d0715c9671c146cb1", "json", "field_list=image,id,deck,name,description,developers,platforms,publishers,similar_games,original_release_date", ID.ToString());
+            ViewData["GameData"] = rootObj;
             return View();
         }
     }

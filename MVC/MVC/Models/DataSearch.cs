@@ -92,7 +92,37 @@ namespace MVC.Models
             
         }
     }
-    public class Image
+    public class DataSearchForDescription
+    {
+        public static RootObject GetDescription(string api_key, string format, string field_list, string game_id)
+        {
+            var url = String.Format("http://www.giantbomb.com/api/game/3030-" + game_id + "/?api_key=" + api_key + "&format=" + format + "&field_list=" + field_list);
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "http://developer.github.com/v3/#user-agent-required");
+                var response = client.GetAsync(url).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // by calling .Result you are performing a synchronous call
+                    var responseContent = response.Content;
+
+                    // by calling .Result you are synchronously reading the result
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+
+                    Console.WriteLine(responseString);
+                    return JsonConvert.DeserializeObject<RootObject>(responseString);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+    }
+
+    /*public class Image
     {
         public string icon_url { get; set; }
         public string medium_url { get; set; }
@@ -109,6 +139,76 @@ namespace MVC.Models
         public int id { get; set; }
         public Image image { get; set; }
         public string name { get; set; }
+    }
+
+    public class RootObject
+    {
+        public string error { get; set; }
+        public int limit { get; set; }
+        public int offset { get; set; }
+        public int number_of_page_results { get; set; }
+        public int number_of_total_results { get; set; }
+        public int status_code { get; set; }
+        public Results results { get; set; }
+        public string version { get; set; }
+    }*/
+
+    public class Image
+    {
+        public string icon_url { get; set; }
+        public string medium_url { get; set; }
+        public string screen_url { get; set; }
+        public string small_url { get; set; }
+        public string super_url { get; set; }
+        public string thumb_url { get; set; }
+        public string tiny_url { get; set; }
+    }
+
+    public class Platform
+    {
+        public string api_detail_url { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string site_detail_url { get; set; }
+        public string abbreviation { get; set; }
+    }
+
+    public class Developer
+    {
+        public string api_detail_url { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string site_detail_url { get; set; }
+    }
+
+    public class Publisher
+    {
+        public string api_detail_url { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string site_detail_url { get; set; }
+    }
+
+    public class SimilarGame
+    {
+        public string api_detail_url { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string site_detail_url { get; set; }
+    }
+
+    public class Results
+    {
+        public string deck { get; set; }
+        public string description { get; set; }
+        public int id { get; set; }
+        public Image image { get; set; }
+        public string name { get; set; }
+        public string original_release_date { get; set; }
+        public List<Platform> platforms { get; set; }
+        public List<Developer> developers { get; set; }
+        public List<Publisher> publishers { get; set; }
+        public List<SimilarGame> similar_games { get; set; }
     }
 
     public class RootObject

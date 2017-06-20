@@ -1,0 +1,46 @@
+﻿@using MVC.Models;
+
+@{
+    RootObject rootObj = (RootObject)ViewData["GameData"];
+    ViewBag.Title = rootObj.results.name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/itemPage.css");
+
+}
+
+<div class="main-part">
+    <div class="left-sidebar">
+
+    </div>
+
+    <!--<div class="loadingStuff">
+        <h1>Loading...</h1>
+        <div class="loader"></div>
+    </div>-->
+
+    <div class="content-holder" style="visibility: visible;">
+        <h3 id="title">
+            @rootObj.results.name;
+        </h3>
+        <div class="row">
+            <div class="col-md-5">
+                <img id="image" src=@rootObj.results.image.medium_url/>
+            </div>
+            <div class="col-md-7">
+
+                <p id="deck">
+                    @rootObj.results.deck;
+                </p>
+            </div>
+
+        </div>
+        <p id="description">@rootObj.results.description</p>
+
+    </div>
+
+    <div class="right-sidebar">
+
+    </div>
+</div>
+
+
