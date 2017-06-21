@@ -13,12 +13,31 @@ namespace MVC.Controllers
         {
             RootObject[] rootObj = DataSearchForThumbnail.GetCompleteDataForThumbnails("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name");
 
-            IndexModel IM = new IndexModel();
-            IM.rootObj = rootObj;
-
-            ViewData["ThumbnailDataArray"] = rootObj;
+            IndexModel IM = new IndexModel(rootObj);           
             
             return View(IM);
+        }
+
+        public ActionResult Discover(string query = "")
+        {
+            SearchRootObject searchResult = DataSearchForGame.GetDescription("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name,original_release_date", query);
+            DiscoverModel DSM = new DiscoverModel(searchResult);
+            if (query != "")
+            {
+                
+                
+            }
+            else
+            {
+                
+            }
+            return View(DSM);
+            
+        }
+
+        public ActionResult History()
+        {
+            return View();
         }
 
         public ActionResult About()
@@ -26,7 +45,7 @@ namespace MVC.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Wallpapers()
         {
             return View();
         }
@@ -34,8 +53,8 @@ namespace MVC.Controllers
         public ActionResult ItemPage(int ID)
         {
             RootObject rootObj = DataSearchForDescription.GetDescription("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name,description,developers,platforms,publishers,similar_games,original_release_date", ID.ToString());
-            ViewData["GameData"] = rootObj;
-            return View();
+            ItemPageModel IMP = new ItemPageModel(rootObj);
+            return View(IMP);
         }
     }
 }

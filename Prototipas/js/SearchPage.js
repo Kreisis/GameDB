@@ -205,8 +205,11 @@ function serverCallback(data) {
 }
 
 function callToServer(keyword) {
+	console.log(keyword);
+	var u = 'http://www.giantbomb.com/api/search/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=jsonp&query="' + keyword + '"&resources=game';
+	console.log(u);
     $.ajax({
-        url: 'http://www.giantbomb.com/api/search/?api_key=739777161fa7c039190e538d0715c9671c146cb1&format=jsonp&query="' + keyword + '"&resources=game',
+        url: u,
         type: "get",
         data: { json_callback: "serverCallback" },
         dataType: "jsonp"

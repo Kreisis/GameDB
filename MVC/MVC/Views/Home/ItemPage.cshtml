@@ -1,10 +1,11 @@
 ﻿@using MVC.Models;
+@model ItemPageModel
 
 @{
-    RootObject rootObj = (RootObject)ViewData["GameData"];
-    ViewBag.Title = rootObj.results.name;
+    ViewBag.Title = Model.itemData.name;
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/itemPage.css");
+    string imageNotFoundURL = "http://www.jordans.com/~/media/jordans%20redesign/no-image-found.ashx?h=275&la=en&w=275&hash=F87BC23F17E37D57E2A0B1CC6E2E3EEE312AAD5B";
 }
 
 <div class="main-part">
@@ -19,21 +20,26 @@
 
     <div class="content-holder" style="visibility: visible;">
         <h3 id="title">
-            @rootObj.results.name
+            @Model.itemData.name
         </h3>
         <div class="row">
             <div class="col-md-5">
-                <img id="image" src=@rootObj.results.image.medium_url />
+                <img id="image" src=@if (Model.itemData.imageURL != null) {
+                    @Model.itemData.imageURL;
+                }
+                else {
+                    @imageNotFoundURL;
+                }>
             </div>
             <div class="col-md-7">
 
                 <p id="deck">
-                    @rootObj.results.deck
+                    @Model.itemData.deck
                 </p>
             </div>
 
         </div>
-        <p id="description">@rootObj.results.description</p>
+        <p id="description">@Model.itemData.description</p>
 
     </div>
 

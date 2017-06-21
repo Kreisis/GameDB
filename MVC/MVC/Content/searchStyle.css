@@ -183,7 +183,7 @@ a.list-group-item {
 
 .loadingStuff,
 .search-rows{
-    visibility: hidden;
+    visibility: visible;
 }
 
 .loadingStuff > h1{

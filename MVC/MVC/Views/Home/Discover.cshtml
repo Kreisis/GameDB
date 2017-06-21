@@ -1,0 +1,45 @@
+﻿@using MVC.Models;
+@model DiscoverModel
+@{
+    ViewBag.Title = "Discover";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/searchStyle.css");
+    @*@Scripts.Render("~/js/SearchPage.js");*@
+}
+
+<div class="row search-bar-div">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." id="searchBar">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="searchButton">Go!</button>
+            </span>
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<!--<div class="loadingStuff">
+    <h1>Loading...</h1>
+    <div class="loader"></div>
+</div>-->
+
+<div class="container search-rows">
+    <div class="row">
+        <div class="list-group" id="searchResultsHolder">
+            @for (int x = 0; x < Model.SearchResult.Count; x++)
+            {
+                <a class="list-group-item">
+                    <div class="media col-md-3">
+                        <figure class="pull-left">
+                            <img class="media-object img-rounded img-responsive" src=@Model.SearchResult[x].imageURL style="height: 196px;">
+                        </figure>
+                    </div>
+                    <div class="col-md-9">
+                        <h1 class="content-header">@Model.SearchResult[x].name</h1>
+                        <p class="list-group-item-text">@Model.SearchResult[x].deck</p>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>
