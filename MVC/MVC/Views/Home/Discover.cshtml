@@ -4,7 +4,7 @@
     ViewBag.Title = "Discover";
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/searchStyle.css");
-    @*@Scripts.Render("~/js/SearchPage.js");*@
+    @Scripts.Render("~/js/SearchPage.js");
 }
 
 <div class="row search-bar-div">
@@ -26,9 +26,9 @@
 <div class="container search-rows">
     <div class="row">
         <div class="list-group" id="searchResultsHolder">
-            @for (int x = 0; x < Model.SearchResult.Count; x++)
+            @for (int x = 0; x < Model.SearchResult.Count && x < Model.maxResults; x++)
             {
-                <a class="list-group-item">
+                <a class="list-group-item" href="/Home/ItemPage/@Model.SearchResult[x].id">
                     <div class="media col-md-3">
                         <figure class="pull-left">
                             <img class="media-object img-rounded img-responsive" src=@Model.SearchResult[x].imageURL style="height: 196px;">

@@ -149,6 +149,7 @@
     <Compile Include="Models\DiscoverModel.cs" />
     <Compile Include="Models\IndexModel.cs" />
     <Compile Include="Models\ItemPageModel.cs" />
+    <Compile Include="Models\WallpaperSearch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,8 +4,7 @@
     $("#searchButton").on("click", function () {
         var searchText = $("#searchBar").val().trim();
         if (searchText != "") {
-            localStorage.setItem('search-argument', searchText);
-            window.open('search.html', '_self');
+            window.open('/Home/Discover?query=' + searchText, '_self');
         }
 
     })
@@ -14,8 +13,7 @@
         if (e.which == 13) {
             var searchText = $("#searchBar").val().trim();
             if (searchText != "") {
-                localStorage.setItem('search-argument', searchText);
-                window.open('search.html', '_self');
+                window.open('/Home/Discover?query=' + searchText, '_self');
             }
         }
     });
@@ -25,14 +23,14 @@
 });
 
 function init() {
-    var keyword = localStorage.getItem('search-argument');
+    /*var keyword = localStorage.getItem('search-argument');
     if (keyword) {
         this.keyword = keyword;
         $(".loadingStuff").css("visibility", "initial");
         localStorage.removeItem('search-argument');
         $("#searchBar").val(keyword);
         callToServer(keyword);
-    }
+    }*/
 }
 
 function test(e) {

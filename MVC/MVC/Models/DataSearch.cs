@@ -123,9 +123,29 @@ namespace MVC.Models
     }
     public class DataSearchForGame
     {
-        public static SearchRootObject GetDescription(string api_key, string format, string field_list, string query)
+        public List<Results> AllSearchResults { get; protected set; }
+        int page;
+        int numberOfTotalResults;
+        public DataSearchForGame(string api_key, string format, string field_list, string query)
         {
-            var url = String.Format("http://www.giantbomb.com/api/search/?api_key=" + api_key + "&format=" + format + "&query=" + '"' + query + '"' + "&resources=game" + "&field_list=" + field_list);
+            page = 1;
+            AllSearchResults = new List<Results>();
+
+            while (true)
+            {
+                APICall(api_key, format, field_list, query, page.ToString());
+                if (page * 10 >= numberOfTotalResults)
+                {
+                    break;
+                }
+                page++;
+            }
+            AllSearchResults = AllSearchResults.OrderByDescending(x => DateTime.Parse(x.original_release_date)).ToList();
+        }
+        public void APICall(string api_key, string format, string field_list, string query, string page)
+        {
+
+            var url = String.Format("http://www.giantbomb.com/api/search/?api_key=" + api_key + "&format=" + format + "&query=" + '"' + query + '"' + "&resources=game" + "&field_list=" + field_list + "&page="+page);
 
             using (var client = new HttpClient())
             {
@@ -141,23 +161,30 @@ namespace MVC.Models
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);
-                    
+
                     SearchRootObject tempRootObject = JsonConvert.DeserializeObject<SearchRootObject>(responseString);
-                    if(tempRootObject.results.Count <= 10 && tempRootObject.number_of_page_results == 1)
+                    foreach(Results result in tempRootObject.results.ToList())
                     {
-                        return tempRootObject;
-                    }
-                    else
-                    {
-                        return tempRootObject;
+                        if (result.original_release_date == null)
+                        {
+                            tempRootObject.results.Remove(result);
+                        }
                     }
                     
-                }
-                else
-                {
-                    return null;
+                    AllSearchResults.AddRange(tempRootObject.results);
+
+                    numberOfTotalResults = tempRootObject.number_of_total_results;
+
                 }
             }
+        }
+        
+    }
+    public class DataSearchForHistory
+    {
+        public DataSearchForHistory(List<string> IDList)
+        {
+
         }
     }
 
@@ -231,6 +258,7 @@ namespace MVC.Models
         public Results results { get; set; }
         public string version { get; set; }
     }
+
     public class SearchRootObject
     {
         public string error { get; set; }
