@@ -24,9 +24,6 @@ namespace MVC.Models
             new int[]{ 4725, 16889, 7659, 42034, 6673, 11552  }
         };
         
-        public DataSearchForThumbnail()
-        {
-        }
         public static RootObject[] GetCompleteDataForThumbnails(string api_key, string format, string field_list)
         {
             RootObject[] rootObjectsarray = new RootObject[9];
@@ -182,9 +179,43 @@ namespace MVC.Models
     }
     public class DataSearchForHistory
     {
+        public RootObject[] SearchHistoryData { get; protected set; }
         public DataSearchForHistory(List<string> IDList)
         {
+            SearchHistoryData = new RootObject[IDList.Count];
 
+            for (int x = 0; x < IDList.Count; x++)
+            {
+                int id = int.Parse(IDList[x]);
+                SearchHistoryData[x] = GetDataForOneGame("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name", IDList[x].ToString());
+                
+            }
+        }
+        private RootObject GetDataForOneGame(string api_key, string format, string field_list, string game_id)
+        {
+            var url = String.Format("http://www.giantbomb.com/api/game/3030-" + game_id + "/?api_key=" + api_key + "&format=" + format + "&field_list=" + field_list);
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "http://developer.github.com/v3/#user-agent-required");
+                var response = client.GetAsync(url).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // by calling .Result you are performing a synchronous call
+                    var responseContent = response.Content;
+
+                    // by calling .Result you are synchronously reading the result
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+
+                    Console.WriteLine(responseString);
+                    return JsonConvert.DeserializeObject<RootObject>(responseString);
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 

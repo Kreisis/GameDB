@@ -1,8 +1,39 @@
-﻿
+﻿@using MVC.Models;
+@model HistoryModel
 @{
     ViewBag.Title = "History";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/searchStyle.css");
+    @Scripts.Render("~/js/SearchPage.js");
 }
 
-<h2>History</h2>
+@if(Model != null)
+{
+    <h1>Your search history:</h1>
+
+    <div class="container search-rows">
+        <div class="row">
+            <div class="list-group" id="searchResultsHolder">
+                @for (int x = 0; x < Model.HistoryItems.Length; x++)
+                {
+                    <a class="list-group-item" href="/Home/ItemPage/@Model.HistoryItems[x].id">
+                        <div class="media col-md-3">
+                            <figure class="pull-left">
+                                <img class="media-object img-rounded img-responsive" src=@Model.HistoryItems[x].imageURL style="height: 196px;">
+                            </figure>
+                        </div>
+                        <div class="col-md-9">
+                            <h1 class="content-header">@Model.HistoryItems[x].name</h1>
+                            <p class="list-group-item-text">@Model.HistoryItems[x].deck</p>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h1>Looks like your search history is empty :(</h1>
+}
 

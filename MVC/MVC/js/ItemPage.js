@@ -59,6 +59,7 @@ function serverCallback(data) {
         $("#deck").append("<br/><br/>Original release date: ");
         $("#deck").append(data.results.original_release_date);
     }
+    
     if (data.results.developers != null) {
         $("#deck").append("<br/><br/>Developers: ");
         var str = "";

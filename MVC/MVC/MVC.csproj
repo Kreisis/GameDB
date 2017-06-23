@@ -141,6 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +163,7 @@
     <Content Include="Content\searchStyle.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\stylish-portfolio.css" />
+    <Content Include="Content\ErrorLayout.css" />
     <Content Include="Content\topLayout.css" />
     <Content Include="Content\wallpaperPage.css" />
     <Content Include="favicon.ico" />
@@ -218,6 +220,7 @@
     <Content Include="Views\Home\Discover.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Wallpapers.cshtml" />
+    <Content Include="Views\Error\Handle404.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

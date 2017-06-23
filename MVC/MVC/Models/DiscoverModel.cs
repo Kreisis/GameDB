@@ -43,4 +43,30 @@ namespace MVC.Models
         public string imageURL { get; set; }
         public int id { get; set; }
     }
+    public class HistoryModel
+    {
+        public HistoryResultsModel[] HistoryItems { get; protected set; }
+        public HistoryModel(RootObject[] rootObject)
+        {
+            RootObject[] rootObj = rootObject;
+            HistoryItems = new HistoryResultsModel[rootObj.Length];
+
+            for(int x = 0; x < rootObj.Length; x++)
+            {
+                HistoryResultsModel temp = new HistoryResultsModel();
+                temp.deck = rootObj[x].results.deck;
+                temp.id = rootObj[x].results.id;
+                temp.imageURL = rootObj[x].results.image.medium_url;
+                temp.name = rootObj[x].results.name;
+                HistoryItems[x] = temp;
+            }
+        }
+    }
+    public class HistoryResultsModel
+    {
+        public string name { get; set; }
+        public int id { get; set; }
+        public string imageURL { get; set; }
+        public string deck { get; set; }
+    }
 }

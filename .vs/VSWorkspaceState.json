@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\MVC",
+    "\\MVC\\MVC",
+    "\\MVC\\MVC\\Controllers",
+    "\\MVC\\MVC\\Views",
+    "\\MVC\\MVC\\Views\\Error",
+    "\\MVC\\MVC\\Views\\Home",
+    "\\MVC\\MVC\\Views\\Shared"
+  ],
+  "SelectedNode": "\\MVC\\MVC\\Web.config",
+  "PreviewInSolutionExplorer": false
+}
