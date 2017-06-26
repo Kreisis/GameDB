@@ -5,11 +5,21 @@ using System.Web;
 using System.Web.Mvc;
 using MVC.Models;
 using Newtonsoft.Json;
+using log4net;
+using System.Diagnostics;
 
 namespace MVC.Controllers
 {
     public class HomeController : Controller
     {
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            ILog log = log4net.LogManager.GetLogger(typeof(ErrorController));
+
+            var st = new StackTrace(filterContext.Exception, true);
+            log.Error(filterContext.Exception.Message);
+            /*base.OnException(filterContext);*/
+        }
         public ActionResult Index()
         {
             RootObject[] rootObj = DataSearchForThumbnail.GetCompleteDataForThumbnails("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name");

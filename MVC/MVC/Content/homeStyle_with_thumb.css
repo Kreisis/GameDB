@@ -48,10 +48,10 @@
     margin: 0px;
 }
 
-
+/*
 #side-pic-a, #side-pic-b{
     height: 800px;
-}
+}*/
 /*/.caption{
     border: 1px solid green;
 }*/
@@ -112,4 +112,32 @@ input[type="color"]:focus,
     visibility: visible;
 }
 
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
 
+/*
+ * Styles copied from the Grid example to make grid rows & columns visible.
+ */
+
+
+
+.row {
+    margin-bottom: 20px;
+}
+
+    .row .row {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+[class*="col-"] {
+    
+    background-color: #eee;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+}

@@ -1,5 +1,4 @@
 ﻿$(document).ready(function () {
-    init();
 
     $("#searchButton").on("click", function () {
         var searchText = $("#searchBar").val().trim();
@@ -23,7 +22,6 @@
 function init() {
     
     $(window).on("load", function () {
-        fixHeight();
         $(".loadingStuff").css("display", "none");
         $("#rows").css("visibility", "initial");
     });
@@ -38,7 +36,7 @@ function init() {
     { "id": "bottom-pic-1", "gameId": [37770, 49522, 45405, 33135, 41419, 34407], "type": "wide", "idIndex": -1 },
     { "id": "bottom-pic-2", "gameId": [4725, 38596, 36884, 42905, 49379, 44653, 42915], "type": "wide", "idIndex": -1 },
     { "id": "bottom-pic-3", "gameId": [4725, 16889, 7659, 42034, 6673, 11552], "type": "wide", "idIndex": -1 }];*/
-
+/*
 function fixHeight() {
     var heightA, heightB, heightC;
     var sideHeight = 0;
@@ -71,7 +69,7 @@ function fixHeight() {
     $("#bottom-pic-2").parent().css('height', Math.max(heightA, heightB, heightC));
     $("#bottom-pic-3").parent().css('height', Math.max(heightA, heightB, heightC));
 
-}
+}*/
 
 
 

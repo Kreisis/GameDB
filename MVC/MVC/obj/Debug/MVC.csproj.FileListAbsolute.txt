@@ -65,3 +65,5 @@ C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\Microsoft.AI.Web.xml
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\obj\Debug\MVC.dll
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\obj\Debug\MVC.pdb
+C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\log4net.dll
+C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\log4net.xml
