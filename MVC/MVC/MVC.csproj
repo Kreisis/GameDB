@@ -165,6 +165,7 @@
     <Content Include="Content\logInStyle.css" />
     <Content Include="Content\searchStyle.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\MainStyle.css" />
     <Content Include="Content\stylish-portfolio.css" />
     <Content Include="Content\ErrorLayout.css" />
     <Content Include="Content\topLayout.css" />
@@ -227,6 +228,7 @@
     <Content Include="Views\Home\Wallpapers.cshtml" />
     <Content Include="Views\Error\Handle404.cshtml" />
     <Content Include="Views\Error\Handle500.cshtml" />
+    <Content Include="Views\Home\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

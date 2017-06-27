@@ -29,6 +29,11 @@ namespace MVC.Controllers
             return View(IM);
         }
 
+        public ActionResult Main()
+        {
+            return View();
+        }
+
         public ActionResult Discover(string query = "")
         { 
             if (query != "")

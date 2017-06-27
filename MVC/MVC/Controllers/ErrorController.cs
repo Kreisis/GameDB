@@ -23,7 +23,7 @@ namespace MVC.Controllers
             return View("Handle404");
         }
         [HandleError]
-        public ActionResult Handle500(Exception ex)
+        public ActionResult Handle500()
         {
             
             Response.StatusCode = 500;

@@ -1,9 +1,15 @@
 .thumbnail > img {
     width: 100%;
-    height: 350px;
+    max-height: px;
     object-fit: cover;
+    
 }
-
+#side-pic-a{
+    height: 900px !important;
+}
+#side-pic-b {
+    height: 900px !important;
+}
 .text-vertical-center {
     /*display: table-cell;
     text-align: center;
@@ -126,18 +132,16 @@ input[type="color"]:focus,
 
 
 .row {
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
-
-    .row .row {
-        margin-top: 10px;
-        margin-bottom: 0;
-    }
-
+.no-margin-top{
+    margin-top: 0px !important;
+}
 [class*="col-"] {
     
-    background-color: #eee;
-    background-color: rgba(86,61,124,.15);
-    border: 1px solid #ddd;
-    border: 1px solid rgba(86,61,124,.2);
+}
+
+.thumbnail{
+    height: 100%;
+    
 }
