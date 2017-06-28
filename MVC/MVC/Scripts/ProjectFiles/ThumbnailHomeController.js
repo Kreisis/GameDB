@@ -3,7 +3,7 @@
     $("#searchButton").on("click", function () {
         var searchText = $("#searchBar").val().trim();
         if (searchText != "") {
-            window.open('/Home/Discover?query=' + searchText, '_self');
+            window.open('/Search/Discover?query=' + searchText, '_self');
         }
         
     })
@@ -12,7 +12,7 @@
         if (e.which == 13) {
             var searchText = $("#searchBar").val().trim();
             if (searchText != "") {
-                window.open('/Home/Discover?query=' + searchText, '_self');
+                window.open('/Search/Discover?query=' + searchText, '_self');
             }
         }
     });

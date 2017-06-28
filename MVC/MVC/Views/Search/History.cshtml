@@ -16,7 +16,7 @@
             <div class="list-group" id="searchResultsHolder">
                 @for (int x = 0; x < Model.HistoryItems.Length; x++)
                 {
-                    <a class="list-group-item" href="/Home/ItemPage/@Model.HistoryItems[x].id">
+                    <a class="list-group-item" href="/Game/ItemPage/@Model.HistoryItems[x].id">
                         <div class="media col-md-3">
                             <figure class="pull-left">
                                 <img class="media-object img-rounded img-responsive" src=@Model.HistoryItems[x].imageURL style="height: 196px;">

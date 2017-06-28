@@ -22,66 +22,11 @@ namespace MVC.Controllers
             
             return View(IM);
         }
-
-        public ActionResult Discover(string query = "")
-        { 
-            if (query != "")
-            {
-                DataSearchForGame Data = new DataSearchForGame("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name,original_release_date", query);
-                SearchRootObject searchResult = new SearchRootObject();
-                searchResult.results = Data.AllSearchResults;
-                DiscoverModel DSM = new DiscoverModel(searchResult);
-                return View(DSM);
-            }
-            else
-            {
-                SearchRootObject searchResult = new SearchRootObject();
-                DiscoverModel DSM = new DiscoverModel(searchResult);
-                return View(DSM);
-            }
-            
-        }
-
-        public ActionResult History()
-        {
-            if(Request.Cookies["History"] != null)
-            {
-                string valueFromCookie = Request.Cookies["History"].Value;
-                List<string> IDHistory = valueFromCookie.Split(' ').ToList();
-                DataSearchForHistory Data = new DataSearchForHistory(IDHistory);
-
-                RootObject[] rootObj = Data.SearchHistoryData;
-                HistoryModel HM = new HistoryModel(rootObj);
-                return View(HM);
-
-            }
-            else
-            {
-                HistoryModel HM = null;
-                return View(HM);
-            }
-        }
-
+       
         public ActionResult About()
         {
             return View();
-        }
-
-        public ActionResult Wallpapers(string query = "")
-        {
-            if(query == "")
-            {
-                RawWallpaperData Data = WallpaperSearch.FirstCall("5c008711ad4f2de33a360d34984a51b4", "32");
-                WallpaperModel WM = new WallpaperModel(Data);
-                return View(WM);
-            }
-            else
-            {
-                RawWallpaperData Data = WallpaperSearch.SearchCall("5c008711ad4f2de33a360d34984a51b4", query);
-                WallpaperModel WM = new WallpaperModel(Data);
-                return View(WM);
-            }
-        }
+        }   
 
         public ActionResult ItemPage(int ID)
         {

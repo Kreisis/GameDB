@@ -186,13 +186,13 @@
     <Content Include="img\sidebar.jpg" />
     <Content Include="img\sidebar2.jpg" />
     <Content Include="img\_poster.jpg" />
-    <Content Include="js\History.js" />
-    <Content Include="js\ItemPage.js" />
-    <Content Include="js\jquery.ajax-cross-origin.min.js" />
-    <Content Include="js\Sample.js" />
-    <Content Include="js\SearchPage.js" />
-    <Content Include="js\ThumbnailHomeController.js" />
-    <Content Include="js\wallpaperPage.js" />
+    <Content Include="Scripts\ProjectFiles\History.js" />
+    <Content Include="Scripts\ProjectFiles\ItemPage.js" />
+    <Content Include="Scripts\ProjectFiles\jquery.ajax-cross-origin.min.js" />
+    <Content Include="Scripts\ProjectFiles\Sample.js" />
+    <Content Include="Scripts\ProjectFiles\SearchPage.js" />
+    <Content Include="Scripts\ProjectFiles\ThumbnailHomeController.js" />
+    <Content Include="Scripts\ProjectFiles\wallpaperPage.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -227,18 +227,16 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TopLayout.cshtml" />
     <Content Include="Views\Home\ItemPage.cshtml" />
-    <Content Include="Views\Home\Discover.cshtml" />
-    <Content Include="Views\Home\History.cshtml" />
-    <Content Include="Views\Home\Wallpapers.cshtml" />
     <Content Include="Views\Error\Handle404.cshtml" />
     <Content Include="Views\Error\Handle500.cshtml" />
+    <Content Include="Views\Wallpaper\Wallpapers.cshtml" />
+    <Content Include="Views\Game\ItemPage.cshtml" />
+    <Content Include="Views\Search\Discover.cshtml" />
+    <Content Include="Views\Search\History.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Game\" />
-    <Folder Include="Views\Search\" />
-    <Folder Include="Views\Wallpaper\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
