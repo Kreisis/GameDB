@@ -10,28 +10,17 @@ using System.Diagnostics;
 
 namespace MVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            ILog log = log4net.LogManager.GetLogger(typeof(ErrorController));
-
-            var st = new StackTrace(filterContext.Exception, true);
-            log.Error(filterContext.Exception.Message);
-            /*base.OnException(filterContext);*/
-        }
+        
         public ActionResult Index()
         {
-            RootObject[] rootObj = DataSearchForThumbnail.GetCompleteDataForThumbnails("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name");
+            DataSearchForThumbnail dt = new DataSearchForThumbnail();
 
+            RootObject[] rootObj = dt.GetCompleteDataForThumbnails("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name");
             IndexModel IM = new IndexModel(rootObj);           
             
             return View(IM);
-        }
-
-        public ActionResult Main()
-        {
-            return View();
         }
 
         public ActionResult Discover(string query = "")

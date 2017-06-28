@@ -12,27 +12,28 @@ namespace MVC.Models
 {
     public class DataSearchForThumbnail
     {
-        public int[][] possibleIDs = new int[][] {
-            new int[]{ 20964, 41484, 29443, 34975, 49833, 44507, 47342 },
-            new int[]{ 39035, 42912, 48113, 36989, 32317, 20654, 42712 },
-            new int[]{ 39750, 42581, 38270, 37957, 36765, 42918 },
-            new int[]{ 21144, 32686, 35129, 37580, 38538, 40796 },
-            new int[]{ 32982, 21662, 32129, 46549, 46557 },
-            new int[]{ 46549, 21500, 42927, 48207, 50449, 42696 },
-            new int[]{ 37770, 49522, 45405, 33135, 41419, 34407 },
-            new int[]{ 4725, 38596, 36884, 42905, 49379, 44653, 42915 },
-            new int[]{ 4725, 16889, 7659, 42034, 6673, 11552  }
+        public int[] possibleIDs = new int[] {
+            20964, 41484, 29443, 34975, 49833, 44507, 47342 ,
+            39035, 42912, 48113, 36989, 32317, 20654, 42712,
+            39750, 42581, 38270, 37957, 36765, 42918,
+            21144, 32686, 35129, 37580, 38538, 40796,
+            32982, 21662, 32129, 46549, 46557,
+            46549, 21500, 42927, 48207, 50449, 42696,
+            37770, 49522, 45405, 33135, 41419, 34407,
+            4725, 38596, 36884, 42905, 49379, 44653, 42915,
+            16889, 7659, 42034, 6673, 11552
         };
         
-        public static RootObject[] GetCompleteDataForThumbnails(string api_key, string format, string field_list)
+        public RootObject[] GetCompleteDataForThumbnails(string api_key, string format, string field_list)
         {
-            RootObject[] rootObjectsarray = new RootObject[9];
+            RootObject[] rootObjectsarray = new RootObject[12];
+            Random rnd = new Random();
+            int[] shuffledIDs = possibleIDs.OrderBy(x => rnd.Next()).ToArray();
 
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 12; i++)
             {
                 DataSearchForThumbnail dt = new DataSearchForThumbnail();
-                Random rnd = new Random();
-                rootObjectsarray[i] = dt.GetDataForOneThumbnail(api_key, format, field_list, dt.possibleIDs[i][rnd.Next(0, dt.possibleIDs[i].Length)].ToString());
+                rootObjectsarray[i] = dt.GetDataForOneThumbnail(api_key, format, field_list, shuffledIDs[i].ToString());
             }
 
             return rootObjectsarray;

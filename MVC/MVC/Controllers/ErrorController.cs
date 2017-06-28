@@ -7,9 +7,8 @@ using log4net;
 
 namespace MVC.Controllers
 {
-    public class ErrorController : Controller
+    public class ErrorController : BaseController
     {
-        ILog log = log4net.LogManager.GetLogger(typeof(ErrorController));
         // GET: Error
         public ActionResult Index()
         {

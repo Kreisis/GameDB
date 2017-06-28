@@ -6,7 +6,7 @@
 
     <title>@ViewBag.Title - PlayDB</title>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -15,6 +15,19 @@
     @Styles.Render("~/Content/topLayout.css")
     @Scripts.Render("~/bundles/modernizr")
 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(document).ready(function () {
+            var sideslider = $('[data-toggle=collapse-side]');
+            var sel = sideslider.attr('data-target');
+            var sel2 = sideslider.attr('data-target-2');
+            sideslider.click(function (event) {
+                $(sel).toggleClass('in');
+                $(sel2).toggleClass('out');
+            });
+        });
+    </script>
 
 </head>
 <body>
@@ -38,6 +51,21 @@
             <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Wallpapers", "Home")';">WALLPAPERS</button>
         </div>
     </div>
+    <!--
+    <div class="navbar-header">
+        <button data-toggle="collapse-side" data-target=".side-collapse" data-target-2=".side-collapse-container" type="button" class="navbar-toggle pull-left navbar-default"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    </div>
+    <div class="navbar-inverse side-collapse in">
+        <nav role="navigation" class="navbar-collapse">
+            
+                <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+                <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
+            
+        </nav>
+    </div>-->
 
     @RenderBody()
 
@@ -45,8 +73,7 @@
         
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>

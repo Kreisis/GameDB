@@ -2,7 +2,7 @@
 @model IndexModel
 @{
     ViewBag.Title = "Home Page";
-    @Styles.Render("~/Content/homeStyle_with_thumb.css");
+    @Styles.Render("~/Content/MainStyle.css");
     @Scripts.Render("~/js/ThumbnailHomeController.js");
     IndexThumbnailModel[] thumbnailData = Model.thumbnailData;
 }
@@ -23,118 +23,19 @@
     <div class="loader"></div>
 </div>-->
 
-<div id="rows">
-    <div class="container-fluid">
-        <div class="row row-eq-height">
-            <div class="col-sm-6 col-md-3">
-                <a href="/Home/ItemPage/@thumbnailData[0].id.ToString()">
-                    <div class="thumbnail" >
-                        <img id="side-pic-a" src=@thumbnailData[0].imageURL alt="">
-                        <div class="caption">
-                            <h3>@thumbnailData[0].name</h3>
-                            <p>@thumbnailData[0].deck</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <div class="row row-eq-height no-margin-top">
-                    <div class="col-sm-6 col-md-7">
-                        <a href="/Home/ItemPage/@thumbnailData[1].id.ToString()">
-                            <div class="thumbnail">
-                                <img id="pic-a-1" src=@thumbnailData[1].imageURL alt="">
-                                <div class="caption">
-                                    <h3>@thumbnailData[1].name</h3>
-                                    <p>@thumbnailData[1].deck</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-5">
-                        <a href="/Home/ItemPage/@thumbnailData[2].id.ToString()">
-                            <div class="thumbnail">
-                                <img id="pic-b-1" src=@thumbnailData[2].imageURL alt="">
-                                <div class="caption">
-                                    <h3>@thumbnailData[2].name</h3>
-                                    <p>@thumbnailData[2].deck</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+<div id="wrapper">
+    <div id="columns">
+        @foreach (IndexThumbnailModel index in thumbnailData)
+        {
+            <a href="/Home/ItemPage/@index.id">
+                <div class="pin">
+                    <img src="@index.imageURL" />
+                    <h2>@index.name</h2>
+                    <p>
+                        @index.deck
+                    </p>
                 </div>
-                <div class="row row-eq-height">
-                    <div class="col-sm-6 col-md-5">
-                        <a href="/Home/ItemPage/@thumbnailData[3].id.ToString()">
-                            <div class="thumbnail">
-                                <img id="pic-b-2" src=@thumbnailData[3].imageURL alt="">
-                                <div class="caption">
-                                    <h3>@thumbnailData[3].name</h3>
-                                    <p>@thumbnailData[3].deck</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-6 col-md-7">
-                        <a href="/Home/ItemPage/@thumbnailData[4].id.ToString()">
-                            <div class="thumbnail">
-                                <img id="pic-a-2" src=@thumbnailData[4].imageURL alt="">
-                                <div class="caption">
-                                    <h3>@thumbnailData[4].name</h3>
-                                    <p>@thumbnailData[4].deck</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <a href="/Home/ItemPage/@thumbnailData[5].id.ToString()">
-                    <div class="thumbnail">
-                        <img id="side-pic-b" src=@thumbnailData[5].imageURL alt="">
-                        <div class="caption">
-                            <h3>@thumbnailData[5].name</h3>
-                            <p>@thumbnailData[5].deck</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="clearfix visible-xs-block"></div>
-        <div class="row row-eq-height" >
-            <div class="col-sm-6 col-md-4">
-                <a href="/Home/ItemPage/@thumbnailData[6].id.ToString()">
-                    <div class="thumbnail">
-                        <img id="bottom-pic-1" src=@thumbnailData[6].imageURL alt="">
-                        <div class="caption">
-                            <h3>@thumbnailData[6].name</h3>
-                            <p>@thumbnailData[6].deck</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="/Home/ItemPage/@thumbnailData[7].id.ToString()">
-                    <div class="thumbnail">
-                        <img id="bottom-pic-2" src=@thumbnailData[7].imageURL alt="">
-                        <div class="caption">
-                            <h3>@thumbnailData[7].name</h3>
-                            <p>@thumbnailData[7].deck</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="/Home/ItemPage/@thumbnailData[8].id.ToString()">
-                    <div class="thumbnail">
-                        <img id="bottom-pic-3" src=@thumbnailData[8].imageURL alt="">
-                        <div class="caption">
-                            <h3>@thumbnailData[8].name</h3>
-                            <p>@thumbnailData[8].deck</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
+            </a>
+        }
     </div>
 </div>
