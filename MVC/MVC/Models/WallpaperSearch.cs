@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Web;
 
 namespace MVC.Models
 {
@@ -47,10 +45,9 @@ namespace MVC.Models
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // by calling .Result you are performing a synchronous call
+
                     var responseContent = response.Content;
 
-                    // by calling .Result you are synchronously reading the result
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);

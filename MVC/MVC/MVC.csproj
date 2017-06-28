@@ -153,6 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CookieManager.cs" />
     <Compile Include="Models\DataSearch.cs" />
     <Compile Include="Models\DiscoverModel.cs" />
     <Compile Include="Models\IndexModel.cs" />
@@ -164,11 +165,8 @@
     <Content Include="Content\AboutStyle.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\homeStyle_with_thumb.css" />
     <Content Include="Content\itemPage.css" />
-    <Content Include="Content\logInStyle.css" />
     <Content Include="Content\searchStyle.css" />
-    <Content Include="Content\style.css" />
     <Content Include="Content\MainStyle.css" />
     <Content Include="Content\stylish-portfolio.css" />
     <Content Include="Content\ErrorLayout.css" />
@@ -178,18 +176,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\banner-new.jpg" />
-    <Content Include="img\banner.jpg" />
-    <Content Include="img\game_bg.jpg" />
     <Content Include="img\poster1.jpg" />
     <Content Include="img\poster2.jpg" />
-    <Content Include="img\poster4.jpg" />
-    <Content Include="img\sidebar.jpg" />
-    <Content Include="img\sidebar2.jpg" />
-    <Content Include="img\_poster.jpg" />
-    <Content Include="Scripts\ProjectFiles\History.js" />
     <Content Include="Scripts\ProjectFiles\ItemPage.js" />
-    <Content Include="Scripts\ProjectFiles\jquery.ajax-cross-origin.min.js" />
-    <Content Include="Scripts\ProjectFiles\Sample.js" />
     <Content Include="Scripts\ProjectFiles\SearchPage.js" />
     <Content Include="Scripts\ProjectFiles\ThumbnailHomeController.js" />
     <Content Include="Scripts\ProjectFiles\wallpaperPage.js" />
@@ -198,7 +187,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="img\banner-project.psd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -226,7 +214,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_TopLayout.cshtml" />
-    <Content Include="Views\Home\ItemPage.cshtml" />
     <Content Include="Views\Error\Handle404.cshtml" />
     <Content Include="Views\Error\Handle500.cshtml" />
     <Content Include="Views\Wallpaper\Wallpapers.cshtml" />

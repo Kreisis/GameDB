@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Home Page";
     @Styles.Render("~/Content/MainStyle.css");
-    @Scripts.Render("~/js/ThumbnailHomeController.js");
+    @Scripts.Render("~/Scripts/ProjectFiles/ThumbnailHomeController.js");
     IndexThumbnailModel[] thumbnailData = Model.thumbnailData;
 }
 
@@ -17,11 +17,6 @@
         </div>
     </div>
 </div>
-
-<!--<div class="loadingStuff">
-    <h1>Loading...</h1>
-    <div class="loader"></div>
-</div>-->
 
 <div id="wrapper">
     <div id="columns">

@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Linq;
-using System.Web;
-using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using System.Diagnostics;
 
 namespace MVC.Models
 {
@@ -49,10 +46,9 @@ namespace MVC.Models
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // by calling .Result you are performing a synchronous call
+                    
                     var responseContent = response.Content;
 
-                    // by calling .Result you are synchronously reading the result
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);
@@ -63,31 +59,6 @@ namespace MVC.Models
                     return null;
                 }
             }
-        }
-        public async static Task<RootObject> GetData2(string api_key, string format, string field_list, string game_id)
-        {
-            using(var http = new HttpClient())
-            {
-                var url = String.Format("http://www.giantbomb.com/api/game/3030-" + game_id + "/?api_key=" + api_key + "&format=" + format + "&field_list=" + field_list);
-
-                http.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "http://developer.github.com/v3/#user-agent-required");
-                HttpResponseMessage response = await http.GetAsync(url);
-
-
-                if (response.IsSuccessStatusCode)
-                {
-
-                    string result = await response.Content.ReadAsStringAsync();
-                    var rootResult = JsonConvert.DeserializeObject<RootObject>(result);
-                    return rootResult;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            
-            
         }
     }
     public class DataSearchForDescription
@@ -103,10 +74,9 @@ namespace MVC.Models
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // by calling .Result you are performing a synchronous call
+                    
                     var responseContent = response.Content;
 
-                    // by calling .Result you are synchronously reading the result
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);
@@ -152,10 +122,9 @@ namespace MVC.Models
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // by calling .Result you are performing a synchronous call
+                    
                     var responseContent = response.Content;
 
-                    // by calling .Result you are synchronously reading the result
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);
@@ -203,10 +172,9 @@ namespace MVC.Models
 
                 if (response.IsSuccessStatusCode)
                 {
-                    // by calling .Result you are performing a synchronous call
+                    
                     var responseContent = response.Content;
 
-                    // by calling .Result you are synchronously reading the result
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
                     Console.WriteLine(responseString);

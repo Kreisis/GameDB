@@ -29,26 +29,26 @@ namespace MVC.Controllers
             else
             {
                 string val = Request.Cookies["History"].Value;
-                List<string> IDHistory = val.Split(' ').ToList();
+                List<string> IDHistory = val.Split(',').ToList();
                 if (IDHistory.Contains(ID.ToString()))
                 {
                     IDHistory.RemoveAt(IDHistory.IndexOf(ID.ToString()));
-                    val = string.Join(" ", IDHistory.ToArray());
+                    val = string.Join(",", IDHistory.ToArray());
                 }
                 if (IDHistory.Count >= 20)
                 {
                     IDHistory.RemoveAt(19);
-                    val = string.Join(" ", IDHistory.ToArray());
+                    val = string.Join(",", IDHistory.ToArray());
                 }
 
-                val = ID.ToString() + " " + val;
+                val = ID.ToString() + "," + val;
 
                 Response.Cookies["History"].Value = val;
             }
             RootObject rootObj = DataSearchForDescription.GetDescription("739777161fa7c039190e538d0715c9671c146cb1", "json", "image,id,deck,name,description,developers,platforms,publishers,similar_games,original_release_date", ID.ToString());
             if (rootObj == null)
             {
-                return RedirectToAction("Handle404", "Home");
+                return RedirectToAction("Handle404", "Error");
             }
             ItemPageModel IMP = new ItemPageModel(rootObj);
             return View("ItemPage" ,IMP);

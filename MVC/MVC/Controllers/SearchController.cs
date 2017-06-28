@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MVC.Models;
 
@@ -16,6 +14,7 @@ namespace MVC.Controllers
         }
         public ActionResult Discover(string query = "")
         {
+            query = query.Trim();
             SearchRootObject searchResult = new SearchRootObject();
 
             if (query != "")
@@ -33,7 +32,7 @@ namespace MVC.Controllers
             if (Request.Cookies["History"] != null)
             {
                 string valueFromCookie = Request.Cookies["History"].Value;
-                List<string> IDHistory = valueFromCookie.Split(' ').ToList();
+                List<string> IDHistory = valueFromCookie.Split(',').ToList();
                 DataSearchForHistory Data = new DataSearchForHistory(IDHistory);
 
                 RootObject[] rootObj = Data.SearchHistoryData;
