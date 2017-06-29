@@ -9,3 +9,10 @@ Parameter name: parameters
 Parameter name: parameters
 2017-06-28 14:52:01,069 [7] ERROR MVC.Controllers.ErrorController The added or subtracted value results in an un-representable DateTime.
 Parameter name: months
+2017-06-29 11:57:56,436 [8] ERROR MVC.Controllers.ErrorController The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ItemPage(Int32)' in 'MVC.Controllers.GameController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+2017-06-29 14:17:15,045 [8] ERROR MVC.Controllers.ErrorController The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult ItemPage(Int32)' in 'MVC.Controllers.GameController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+2017-06-29 14:30:01,264 [9] ERROR MVC.Controllers.ErrorController Object reference not set to an instance of an object.
+2017-06-29 14:45:10,177 [16] ERROR MVC.Controllers.ErrorController Object reference not set to an instance of an object.
+2017-06-29 15:19:18,950 [31] ERROR MVC.Controllers.ErrorController Exception of type 'System.OutOfMemoryException' was thrown.

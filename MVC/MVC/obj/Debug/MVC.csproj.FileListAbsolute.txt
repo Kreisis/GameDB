@@ -67,3 +67,6 @@ C:\Users\Student1\Desktop\GameDB\MVC\MVC\obj\Debug\MVC.dll
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\obj\Debug\MVC.pdb
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\log4net.dll
 C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\log4net.xml
+C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\HtmlAgilityPack.dll
+C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\HtmlAgilityPack.pdb
+C:\Users\Student1\Desktop\GameDB\MVC\MVC\bin\HtmlAgilityPack.xml
