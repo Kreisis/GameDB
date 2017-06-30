@@ -16,3 +16,11 @@ Parameter name: parameters
 2017-06-29 14:30:01,264 [9] ERROR MVC.Controllers.ErrorController Object reference not set to an instance of an object.
 2017-06-29 14:45:10,177 [16] ERROR MVC.Controllers.ErrorController Object reference not set to an instance of an object.
 2017-06-29 15:19:18,950 [31] ERROR MVC.Controllers.ErrorController Exception of type 'System.OutOfMemoryException' was thrown.
+2017-06-30 11:30:02,007 [16] ERROR MVC.Controllers.ErrorController Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'MVC.Models.Results' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'results', line 1, position 133.
+2017-06-30 11:30:02,007 [7] ERROR MVC.Controllers.ErrorController One or more errors occurred.
+2017-06-30 12:31:51,243 [8] ERROR MVC.Controllers.ErrorController None found
+2017-06-30 12:32:15,115 [8] ERROR MVC.Controllers.ErrorController None found
+2017-06-30 12:34:10,259 [7] ERROR MVC.Controllers.ErrorController None found
+2017-06-30 12:34:33,704 [7] ERROR MVC.Controllers.ErrorController None found

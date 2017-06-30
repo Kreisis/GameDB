@@ -216,7 +216,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_TopLayout.cshtml" />
     <Content Include="Views\Error\Handle404.cshtml" />
     <Content Include="Views\Error\Handle500.cshtml" />
     <Content Include="Views\Wallpaper\Wallpapers.cshtml" />
@@ -226,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

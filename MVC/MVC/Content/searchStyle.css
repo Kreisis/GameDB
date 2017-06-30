@@ -1,28 +1,4 @@
 
-.game-name-text{
-   float: left;
-   margin: 0;
-   padding: 0;
-   width: 50%;
-   height: 100%;
-   color: #FFF;
-   border: 1px solid #FFF;
-   font-size: 30px;
-   text-align:left;
-}
-.game-description{
-   float: left;
-   margin: 0;
-   padding: 0;
-   width: 50%;
-   height: 100%;
-   color: #FFF;
-   border: 1px solid #FFF;
-   font-size: 17px;
-   text-align: justify;
-   word-wrap:break-word;
-   
-}
 .text-holder{
    position:absolute;
    left: 0;

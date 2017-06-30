@@ -79,7 +79,11 @@ namespace MVC.Models
 
                     string responseString = responseContent.ReadAsStringAsync().Result;
 
-                    Console.WriteLine(responseString);
+                    if (responseString.Contains("\"error\":\"Object Not Found\""))
+                    {
+                        return null;
+                    }
+                    
                     return JsonConvert.DeserializeObject<RootObject>(responseString);
                 }
                 else
