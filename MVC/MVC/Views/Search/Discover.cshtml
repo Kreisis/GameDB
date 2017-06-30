@@ -25,12 +25,12 @@
             @for (int x = 0; x < Model.SearchResult.Count && x < Model.maxResults; x++)
             {
                 <a class="list-group-item" href="/Game/ItemPage/@Model.SearchResult[x].id">
-                    <div class="media col-md-3">
+                    <div class="media col-md-3 col-sm-3">
                         <figure class="pull-left">
-                            <img class="media-object img-rounded img-responsive" src=@Model.SearchResult[x].imageURL style="height: 196px;">
+                            <img class="media-object img-rounded img-responsive" src=@Model.SearchResult[x].imageURL>
                         </figure>
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-9 col-sm-9">
                         <h1 class="content-header">@Model.SearchResult[x].name</h1>
                         <p class="list-group-item-text">@Model.SearchResult[x].deck</p>
                     </div>

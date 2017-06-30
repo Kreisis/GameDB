@@ -5,21 +5,12 @@
     ViewBag.Title = Model.itemData.name;
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/itemPage.css");
-    @Scripts.Render("~/Scripts/ProjectFiles/ItemPage.js");
+    
     string imageNotFoundURL = "http://www.jordans.com/~/media/jordans%20redesign/no-image-found.ashx?h=275&la=en&w=275&hash=F87BC23F17E37D57E2A0B1CC6E2E3EEE312AAD5B";
     string descriptionHTML = Model.itemData.description;
 }
 
 <div class="main-part">
-    <div class="left-sidebar">
-
-    </div>
-
-    <!--<div class="loadingStuff">
-        <h1>Loading...</h1>
-        <div class="loader"></div>
-    </div>-->
-
     <div class="content-holder" style="visibility: visible;">
         <h3 id="title">
             @Model.itemData.name
@@ -42,10 +33,6 @@
 
         </div>
         <p id="description">@Html.Raw(descriptionHTML)</p>
-
-    </div>
-
-    <div class="right-sidebar">
 
     </div>
 </div>

@@ -179,9 +179,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\banner-new.jpg" />
+    <Content Include="img\cover.jpg" />
     <Content Include="img\poster1.jpg" />
     <Content Include="img\poster2.jpg" />
-    <Content Include="Scripts\ProjectFiles\ItemPage.js" />
     <Content Include="Scripts\ProjectFiles\SearchPage.js" />
     <Content Include="Scripts\ProjectFiles\ThumbnailHomeController.js" />
     <Content Include="Scripts\ProjectFiles\wallpaperPage.js" />
