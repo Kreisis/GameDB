@@ -5,6 +5,7 @@
     @Styles.Render("~/Content/MainStyle.css");
     @Scripts.Render("~/Scripts/ProjectFiles/ThumbnailHomeController.js");
     IndexThumbnailModel[] thumbnailData = Model.thumbnailData;
+    string imageNotFoundURL = "~/img/NoImage.jpg";
 }
 
 <div class="row search-bar-div">
@@ -24,7 +25,7 @@
         {
             <a href="/Game/ItemPage/@index.id">
                 <div class="pin">
-                    <img src="@index.imageURL" />
+                    <img src=@if (index.imageURL != null) { @index.imageURL} else { @imageNotFoundURL} />
                     <h2>@index.name</h2>
                     <p>
                         @index.deck

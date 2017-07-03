@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/searchStyle.css");
     @Scripts.Render("~/Scripts/ProjectFiles/SearchPage.js");
+    string imageNotFoundURL = "~/img/NoImage.jpg";
 }
 
 <div class="row search-bar-div">
@@ -27,7 +28,7 @@
                 <a class="list-group-item" href="/Game/ItemPage/@Model.SearchResult[x].id">
                     <div class="media col-md-3 col-sm-3">
                         <figure class="pull-left">
-                            <img class="media-object img-rounded img-responsive" src=@Model.SearchResult[x].imageURL>
+                            <img class="media-object img-rounded img-responsive" src=@if (@Model.SearchResult[x].imageURL != null) {@Model.SearchResult[x].imageURL } else { @imageNotFoundURL}>
                         </figure>
                     </div>
                     <div class="col-md-9 col-sm-9">

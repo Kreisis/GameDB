@@ -10,6 +10,16 @@ body {
     color: #ffc13d;
 }
 
+.menu-text-default{
+    display: inline-block;
+    background-color: none;
+}
+.menu-text-small{
+    display: none;
+    font-size:large;
+    background-color: none;
+}
+
 .banner-div {
     width: 100%;
 }
@@ -76,33 +86,12 @@ body {
     background-color: #212223;
     border-width: 2px;
 }
-span{
-    background-color: white;
-}
 
-@media screen and (max-width: 768px) {
-    .side-collapse-container {
-        width: 100%;
-        position: relative;
-        left: 0;
-        transition: left .4s;
+@media screen and (max-width: 720px) {
+    .menu-text-default {
+        display: none;
     }
-
-        .side-collapse-container.out {
-            left: 200px;
-        }
-
-    .side-collapse {
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        width: 200px;
-        position: fixed;
-        overflow: hidden;
-        transition: width .4s;
+    .menu-text-small{
+        display: inline-block;
     }
-
-        .side-collapse.in {
-            width: 0;
-        }
 }
