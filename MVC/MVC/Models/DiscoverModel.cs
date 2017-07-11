@@ -16,7 +16,7 @@ namespace MVC.Models
                 {
                     SearchResultModel temp = new SearchResultModel();
                     temp.name = rootObj.results[x].name;
-                    temp.deck = rootObj.results[x].deck;
+                    temp.deck = Safety.TruncateString(rootObj.results[x].deck, 700);
                     temp.id = rootObj.results[x].id;
                     if(rootObj.results[x].image != null && rootObj.results[x].image.medium_url != null)
                     {

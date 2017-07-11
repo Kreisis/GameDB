@@ -30,11 +30,15 @@ namespace MVC.Models
 
             HtmlNodeCollection rootNodes = doc.DocumentNode.SelectNodes(badNodesXPATH);
 
-            foreach (HtmlNode node in rootNodes)
+            if(rootNodes != null)
             {
-                
-                node.Remove();   
+                foreach (HtmlNode node in rootNodes)
+                {
+
+                    node.Remove();
+                }
             }
+            
 
             HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes("*");
             

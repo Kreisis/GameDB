@@ -192,6 +192,23 @@ namespace MVC.Models
         }
     }
 
+    public class Safety
+    {
+        public static string TruncateString(string value, int maxlenght)
+        {
+            if (value == null || maxlenght <= 0)
+            {
+                return "";
+            }
+            else
+            {
+                return value.Substring(0, Math.Min(value.Length, maxlenght));
+                
+            }
+        }
+    }
+    
+
     public class Image
     {
         public string icon_url { get; set; }

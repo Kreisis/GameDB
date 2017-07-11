@@ -165,6 +165,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LearningDatabase.mdf" />
+    <Content Include="App_Data\LearningDatabase_log.ldf">
+      <DependentUpon>LearningDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\AboutStyle.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -180,9 +184,9 @@
     <Content Include="Global.asax" />
     <Content Include="img\banner-new.jpg" />
     <Content Include="img\cover.jpg" />
+    <Content Include="img\ErrorImage.png" />
+    <Content Include="img\icon.png" />
     <Content Include="img\NoImage.jpg" />
-    <Content Include="img\poster1.jpg" />
-    <Content Include="img\poster2.jpg" />
     <Content Include="Scripts\ProjectFiles\SearchPage.js" />
     <Content Include="Scripts\ProjectFiles\ThumbnailHomeController.js" />
     <Content Include="Scripts\ProjectFiles\wallpaperPage.js" />
@@ -224,9 +228,7 @@
     <Content Include="Views\Search\Discover.cshtml" />
     <Content Include="Views\Search\History.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>

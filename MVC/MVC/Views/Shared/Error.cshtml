@@ -1,52 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>@ViewBag.Title - PlayDB</title>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-
-    @Styles.Render("~/Content/bootstrap.css")
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
     @Styles.Render("~/Content/ErrorLayout.css")
-    @Scripts.Render("~/bundles/modernizr")
+}
 
-
-</head>
-<body>
-    <div class="banner-div">
-        <img class="banner-img" src="~/img/banner-new.jpg" />
-    </div>
-    <div class="btn-group btn-group-justified nav-bar-top" role="group">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';">HOME</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Discover", "Home")';">DISCOVER</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("History", "Home")';">HISTORY</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("About", "Home")';">ABOUT</button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Wallpaper")';">WALLPAPERS</button>
-        </div>
-    </div>
-    <div class="holding-area">
-        <img src="http://www.powerpointhintergrund.com/uploads/red-text-game-over-png-transparent-4.png" class="game-over-img"/>
-        <h1 class="error-header">Ooops...<br />Something went wrong!</h1>
-        <hr />
-        @RenderBody()
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
+<div class="holding-area">
+    <img src="~/img/ErrorImage.png" class="game-over-img"/>
+    <h1 class="error-header">Ooops...<br />Something went wrong!</h1>
+    <hr />
+    @RenderBody()
+</div>
