@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/ErrorLayout.css")
+}
+
+<div class="holding-area">
+    <img src="~/img/ErrorImage.png" class="game-over-img"/>
+    <h1 class="error-header">Ooops...<br />Something went wrong!</h1>
+    <hr />
+    @RenderBody()
+</div>

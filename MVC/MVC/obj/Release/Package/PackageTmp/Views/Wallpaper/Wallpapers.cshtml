@@ -1,0 +1,45 @@
+﻿@using MVC.Models;
+@model WallpaperModel
+@{
+    ViewBag.Title = "Wallpapers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/wallpaperPage.css");
+    @Scripts.Render("~/Scripts/ProjectFiles/wallpaperPage.js");
+}
+
+<div class="row search-bar-div">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." id="searchBar">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="searchButton">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container search-rows">
+    <div class="row content-row">
+        <div class="list-group" id="searchResultsHolder">
+            @for(int x = 0; x < Model.maxResults;)
+            {
+                <div class="row content-row">
+                    @for (int y = 0; y < Model.resultsInRow; y++)
+                    {
+                        <div class="col-md-3">
+                            <a href=@Model.Wallpapers[x].url_image target="_blank" class="list-group-item">
+                                <div class="media">
+                                    <figure class="pull-left">
+                                        <p>@Model.Wallpapers[x].width X @Model.Wallpapers[x].height</p>
+                                        <img class="media-object img-rounded img-responsive" src=@Model.Wallpapers[x].url_thumb>
+                                     </figure>
+                                </div>
+                            </a>
+                       </div>
+                        x++;
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - PlayDB</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <link href="~/img/icon.png" rel="shortcut icon" type="image/x-icon" />
+
+
+    <script src="https://use.fontawesome.com/f796b5b6f4.js"></script>
+
+    @Styles.Render("~/Content/bootstrap.css")
+    @Styles.Render("~/Content/topLayout.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(document).ready(function () {
+            var sideslider = $('[data-toggle=collapse-side]');
+            var sel = sideslider.attr('data-target');
+            var sel2 = sideslider.attr('data-target-2');
+            sideslider.click(function (event) {
+                $(sel).toggleClass('in');
+                $(sel2).toggleClass('out');
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="banner-div">
+        <img class="banner-img" src="~/img/banner-new.jpg" />
+    </div>
+    <div class="btn-group btn-group-justified nav-bar-top" data-spy="affix" data-offset-top="80" role="group">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Home")';"> <span class="menu-text-default">HOME</span> <i class="fa fa-home menu-text-small" aria-hidden="true"></i> </button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Discover", "Search")';"><span class="menu-text-default">DISCOVER</span> <i class="fa fa-search menu-text-small" aria-hidden="true"></i></button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("History", "Search")';"><span class="menu-text-default">HISTORY</span> <i class="fa fa-history menu-text-small" aria-hidden="true"></i></button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("About", "Home")';"><span class="menu-text-default">ABOUT</span> <i class="fa fa-info menu-text-small" aria-hidden="true"></i></button>
+        </div>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-dark" onclick="location.href='@Url.Action("Index", "Wallpaper")';"><span class="menu-text-default">WALLPAPERS</span> <i class="fa fa-picture-o menu-text-small" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div class="renderbody-div">
+        @RenderBody()
+    </div>
+    
+
+    <div class="container body-content">
+        
+    </div>
+
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

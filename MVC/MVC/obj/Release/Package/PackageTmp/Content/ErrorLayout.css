@@ -1,0 +1,50 @@
+﻿html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #212223;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+
+.banner-div {
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-dark {
+    text-anchor: start;
+    border-radius: 0;
+    color: #fff;
+    background-color: rgba(0,0,0,0);
+    height: 50px;
+    border-top: 3px solid #ffc13d;
+    border-bottom: 3px solid #ffc13d;
+    border-left: 1px solid #ffc13d;
+    border-right: 1px solid #ffc13d;
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+        color: #fff;
+        background-color: rgba(0,0,0,0.7);
+
+}
+.holding-area{
+    width:100%;
+    padding: 0% 15%;
+
+}
+.game-over-img{
+    width: 100%
+}
+.error-header{
+    color: white; 
+}

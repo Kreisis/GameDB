@@ -1,0 +1,37 @@
+﻿@using MVC.Models;
+@model IndexModel
+@{
+    ViewBag.Title = "Home Page";
+    @Styles.Render("~/Content/MainStyle.css");
+    @Scripts.Render("~/Scripts/ProjectFiles/ThumbnailHomeController.js");
+    IndexThumbnailModel[] thumbnailData = Model.thumbnailData;
+    string imageNotFoundURL = "~/img/NoImage.jpg";
+}
+
+<div class="row search-bar-div">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+            <input id="searchBar" type="text" class="form-control" placeholder="Search for..." style="border-radius: 0px">
+            <span class="input-group-btn">
+                <button id="searchButton" class="btn btn-default" type="button" style="border-radius: 0px">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+    <div id="columns">
+        @foreach (IndexThumbnailModel index in thumbnailData)
+        {
+            <a href="/Game/ItemPage/@index.id">
+                <div class="pin">
+                    <img src=@if (index.imageURL != null) { @index.imageURL} else { @imageNotFoundURL} />
+                    <h2>@index.name</h2>
+                    <p>
+                        @index.deck
+                    </p>
+                </div>
+            </a>
+        }
+    </div>
+</div>

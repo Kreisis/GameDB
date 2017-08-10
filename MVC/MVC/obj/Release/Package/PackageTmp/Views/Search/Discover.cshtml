@@ -1,0 +1,42 @@
+﻿@using MVC.Models;
+@model DiscoverModel
+@{
+    ViewBag.Title = "Discover";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    @Styles.Render("~/Content/searchStyle.css");
+    @Scripts.Render("~/Scripts/ProjectFiles/SearchPage.js");
+    string imageNotFoundURL = "~/img/NoImage.jpg";
+}
+
+<div class="row search-bar-div">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." id="searchBar" maxlength="50">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="searchButton">Go!</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container search-rows">
+    <div class="row">
+        <div class="list-group" id="searchResultsHolder">
+            @for (int x = 0; x < Model.SearchResult.Count && x < Model.maxResults; x++)
+            {
+                <a class="list-group-item" href="/Game/ItemPage/@Model.SearchResult[x].id">
+                    <div class="media col-md-3 col-sm-3">
+                        <figure class="pull-left">
+                            <img class="media-object img-rounded img-responsive" src=@if (@Model.SearchResult[x].imageURL != null) {@Model.SearchResult[x].imageURL } else { @imageNotFoundURL}>
+                        </figure>
+                    </div>
+                    <div class="col-md-9 col-sm-9">
+                        <h1 class="content-header">@Model.SearchResult[x].name</h1>
+                        <p class="list-group-item-text">@Model.SearchResult[x].deck</p>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</div>
